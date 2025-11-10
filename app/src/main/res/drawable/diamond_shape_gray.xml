@@ -7,7 +7,7 @@
             android:pivotX="50%"
             android:pivotY="50%">
             <shape android:shape="rectangle">
-                <solid android:color="#26A69A" />
+                <solid android:color="#757575" />
                 <size
                     android:width="40dp"
                     android:height="40dp" />

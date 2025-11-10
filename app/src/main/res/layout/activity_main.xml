@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/background_gradient">
 
     <ScrollView
         android:id="@+id/scrollContent"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Bienvenido Usuario"
                 android:textSize="20sp"
-                android:textColor="#000000"
+                android:textColor="@color/text_dark"
                 android:layout_marginBottom="16dp" />
 
             <!-- Campo de credencial -->
@@ -32,7 +32,7 @@
                 android:layout_height="50dp"
                 android:text="datos y numero de credencial?"
                 android:textSize="14sp"
-                android:textColor="#000000"
+                android:textColor="@color/text_gray"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:background="@drawable/rounded_field"
@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:text="Buscar medico"
                         android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:textColor="@color/text_dark"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -94,7 +94,7 @@
                         android:layout_height="wrap_content"
                         android:text="Mis turnos"
                         android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:textColor="@color/text_dark"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:text="Mis chats"
                         android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:textColor="@color/text_dark"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:text="Historial"
                         android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:textColor="@color/text_dark"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -176,7 +176,7 @@
                     android:layout_height="wrap_content"
                     android:text="Perfil"
                     android:textSize="14sp"
-                    android:textColor="#000000"
+                    android:textColor="@color/text_dark"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -186,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:text="Servicios frecuentes"
                 android:textSize="16sp"
-                android:textColor="#000000"
+                android:textColor="@color/text_dark"
                 android:layout_marginBottom="12dp"
                 android:layout_marginLeft="8dp" />
 
@@ -210,14 +210,14 @@
                     android:layout_weight="1"
                     android:text="Consulta General"
                     android:textSize="14sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_dark" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=">"
                     android:textSize="20sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/teal_icon" />
             </LinearLayout>
 
             <!-- Especialidad de ejemplo -->
@@ -240,14 +240,14 @@
                     android:layout_weight="1"
                     android:text="Especialidad de ejemplo"
                     android:textSize="14sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_dark" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=">"
                     android:textSize="20sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/teal_icon" />
             </LinearLayout>
 
         </LinearLayout>
@@ -285,7 +285,7 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                android:textColor="@color/teal_icon" />
         </LinearLayout>
 
         <LinearLayout
@@ -307,7 +307,7 @@
                 android:layout_height="wrap_content"
                 android:text="Buscar"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -329,7 +329,7 @@
                 android:layout_height="wrap_content"
                 android:text="Turnos"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -351,7 +351,7 @@
                 android:layout_height="wrap_content"
                 android:text="Perfil"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
     </LinearLayout>
