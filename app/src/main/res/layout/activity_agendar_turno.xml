@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient">
+
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Médico elegido -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medico elegido"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:id="@+id/cardMedicoElegido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/diamond_shape"
+                    android:layout_marginRight="16dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nombreMedicoElegido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Pepe Pepito"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/especialidadMedicoElegido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiologia"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_gray"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/ratingMedicoElegido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="◇ 4.8 (128)"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Fecha -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_field"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/txtFecha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10/11/2025"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/diamond_shape" />
+            </LinearLayout>
+
+            <!-- Horarios disponibles -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horarios disponibles"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <GridLayout
+                android:id="@+id/gridHorarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btnHora1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="10:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="11:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="14:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="15:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora5"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="15:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora6"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="16:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora7"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="17:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora8"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="17:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora9"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="18:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+                <Button
+                    android:id="@+id/btnHora10"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:text="18:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/rounded_button" />
+
+            </GridLayout>
+
+            <!-- Motivo de la consulta -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motivo de la consulta"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/editMotivo"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_field"
+                android:padding="16dp"
+                android:hint="Describa brevemente el motivo de su consulta."
+                android:textSize="14sp"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/text_gray"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+            <!-- Botón Confirmar turno -->
+            <Button
+                android:id="@+id/btnConfirmarTurno"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Confirmar turno"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_agendar"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navBuscar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navTurnos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turnos"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
