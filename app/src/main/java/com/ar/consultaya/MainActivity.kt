@@ -1,15 +1,25 @@
 package com.ar.consultaya
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
+data class Turno(val nombre: String, val especialidad: String, val fechaHora: String)
+
 class MainActivity : AppCompatActivity() {
     private var horarioSeleccionado: String? = null
+    private val turnos = mutableListOf(
+        Turno("Dr. Pepe Pepito", "Cardiologia", "10/11/25, 15:00hs"),
+        Turno("Dra. Pepa Pepita", "Dermatologia", "1/12/25, 08:00hs"),
+        Turno("Dr. Juan Perez", "Clinico", "20/02/26, 10:15hs")
+    )
+    private var turnoSeleccionadoParaCancelar: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.btnMisTurnos).setOnClickListener {
-            Toast.makeText(this, "Mis turnos", Toast.LENGTH_SHORT).show()
+            mostrarTurnos()
         }
 
         findViewById<android.view.View>(R.id.btnMisChats).setOnClickListener {
@@ -33,10 +43,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<android.view.View>(R.id.btnHistorial).setOnClickListener {
             Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show()
-        }
-
-        findViewById<android.view.View>(R.id.btnPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<android.view.View>(R.id.btnConsultaGeneral).setOnClickListener {
@@ -56,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            Toast.makeText(this, "Turnos", Toast.LENGTH_SHORT).show()
+            mostrarTurnos()
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -88,11 +94,63 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            Toast.makeText(this, "Turnos", Toast.LENGTH_SHORT).show()
+            mostrarTurnos()
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
             Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarTurnos() {
+        setContentView(R.layout.activity_turnos)
+
+        val listaTurnos = findViewById<LinearLayout>(R.id.listaTurnos)
+        listaTurnos.removeAllViews()
+
+        turnos.forEachIndexed { index, turno ->
+            val card = layoutInflater.inflate(R.layout.item_turno, listaTurnos, false)
+            card.findViewById<TextView>(R.id.nombreMedico).text = turno.nombre
+            card.findViewById<TextView>(R.id.especialidadMedico).text = turno.especialidad
+            card.findViewById<TextView>(R.id.fechaHora).text = turno.fechaHora
+            card.findViewById<Button>(R.id.btnCancelar).setOnClickListener {
+                mostrarDialogoCancelar(index, turno)
+            }
+            listaTurnos.addView(card)
+        }
+
+        findViewById<View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<View>(R.id.navPerfil).setOnClickListener {
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarDialogoCancelar(index: Int, turno: Turno) {
+        turnoSeleccionadoParaCancelar = index
+        val dialog = findViewById<LinearLayout>(R.id.dialogCancelar)
+        dialog.visibility = View.VISIBLE
+        findViewById<TextView>(R.id.detalleTurno).text = "Turno con: ${turno.nombre} de ${turno.especialidad} el ${turno.fechaHora}."
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            dialog.visibility = View.GONE
+        }
+
+        findViewById<Button>(R.id.btnConfirmarCancelar).setOnClickListener {
+            turnos.removeAt(index)
+            dialog.visibility = View.GONE
+            mostrarTurnos()
+            Toast.makeText(this, "Turno cancelado", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -126,7 +184,12 @@ class MainActivity : AppCompatActivity() {
             if (horarioSeleccionado == null) {
                 Toast.makeText(this, "Seleccione un horario", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Turno confirmado: $nombre - $horarioSeleccionado", Toast.LENGTH_SHORT).show()
+                var fecha = findViewById<TextView>(R.id.txtFecha).text.toString()
+                fecha = fecha.replace("/2025", "/25").replace("/2026", "/26")
+                val fechaHora = "$fecha, ${horarioSeleccionado}hs"
+                turnos.add(Turno(nombre, especialidad, fechaHora))
+                Toast.makeText(this, "Turno confirmado", Toast.LENGTH_SHORT).show()
+                mostrarTurnos()
             }
         }
 
@@ -139,7 +202,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            Toast.makeText(this, "Turnos", Toast.LENGTH_SHORT).show()
+            mostrarTurnos()
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {

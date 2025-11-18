@@ -26,158 +26,122 @@
                 android:textColor="@color/text_dark"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Campo de credencial -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="datos y numero de credencial?"
-                android:textSize="14sp"
-                android:textColor="@color/text_gray"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:background="@drawable/rounded_field"
-                android:layout_marginBottom="24dp" />
 
-            <!-- Grid 2x2 -->
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="2"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:id="@+id/btnBuscarMedico"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginBottom="12dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Buscar medico"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_dark"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btnMisTurnos"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginBottom="12dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mis turnos"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_dark"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btnMisChats"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginBottom="12dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mis chats"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_dark"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btnHistorial"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginBottom="12dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Historial"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_dark"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-            </GridLayout>
-
-            <!-- Botón Perfil individual -->
+            <!-- Buscar medico -->
             <LinearLayout
-                android:id="@+id/btnPerfil"
+                android:id="@+id/btnBuscarMedico"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/diamond_shape"
+                    android:layout_marginRight="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Buscar médico"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <!-- Proximos Turnos -->
+            <LinearLayout
+                android:id="@+id/btnMisTurnos"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/diamond_shape"
+                    android:layout_marginRight="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Proximos Turnos"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <!-- Historial -->
+            <LinearLayout
+                android:id="@+id/btnHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/diamond_shape"
+                    android:layout_marginRight="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Historial de consultas"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <!-- Mis Chats -->
+            <LinearLayout
+                android:id="@+id/btnMisChats"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/rounded_button"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <View
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/diamond_shape"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginRight="16dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Perfil"
+                    android:layout_weight="1"
+                    android:text="Mis Chats"
                     android:textSize="14sp"
-                    android:textColor="@color/text_dark"
-                    android:textAlignment="center" />
+                    android:textColor="@color/text_dark" />
             </LinearLayout>
 
             <!-- Título Servicios frecuentes -->
@@ -194,7 +158,7 @@
             <LinearLayout
                 android:id="@+id/btnConsultaGeneral"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="12dp"
@@ -224,7 +188,7 @@
             <LinearLayout
                 android:id="@+id/btnEspecialidad"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="12dp"
