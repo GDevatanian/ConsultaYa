@@ -1,9 +1,11 @@
 package com.ar.consultaya
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -23,7 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mostrarHome()
+        val pantallaInicial = intent.getStringExtra("PANTALLA_INICIAL")
+        when (pantallaInicial) {
+            "BUSCAR" -> mostrarBuscarMedico()
+            "TURNOS" -> mostrarTurnos()
+            else -> mostrarHome()
+        }
     }
 
     private fun mostrarHome() {
@@ -66,12 +73,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
     private fun mostrarBuscarMedico() {
         setContentView(R.layout.activity_buscar_medico)
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            mostrarHome()
+        }
 
         findViewById<Button>(R.id.btnAgendar1).setOnClickListener {
             mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
@@ -98,12 +111,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
     private fun mostrarTurnos() {
         setContentView(R.layout.activity_turnos)
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            mostrarHome()
+        }
 
         val listaTurnos = findViewById<LinearLayout>(R.id.listaTurnos)
         listaTurnos.removeAllViews()
@@ -132,7 +151,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
@@ -157,6 +178,10 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarAgendarTurno(nombre: String, especialidad: String, rating: String) {
         setContentView(R.layout.activity_agendar_turno)
         horarioSeleccionado = null
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            mostrarBuscarMedico()
+        }
 
         findViewById<TextView>(R.id.nombreMedicoElegido).text = nombre
         findViewById<TextView>(R.id.especialidadMedicoElegido).text = especialidad
@@ -206,14 +231,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
     private fun mostrarHistorial() {
         setContentView(R.layout.activity_historial)
 
-        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
         }
 
@@ -254,14 +281,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
     private fun mostrarDetalleConsulta(nombre: String, especialidad: String, fechaHora: String, anotaciones: String) {
         setContentView(R.layout.activity_detalle_consulta)
 
-        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHistorial()
         }
 
@@ -364,7 +393,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 }

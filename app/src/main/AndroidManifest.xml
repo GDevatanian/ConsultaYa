@@ -24,6 +24,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.ConsultaYa" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.ConsultaYa" />
     </application>
 

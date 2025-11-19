@@ -19,31 +19,32 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Título -->
-            <LinearLayout
+            <!-- Header con flecha y título -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
 
-                <Button
-                    android:id="@+id/btnVolver"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="0dp"
-                    android:background="@android:color/transparent"
-                    android:padding="0dp"
-                    android:text="←"
-                    android:textColor="@color/text_dark"
-                    android:textSize="34sp" />
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    app:tint="@color/teal_icon"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Historial de consultas:"
+                    android:text="Historial de consultas"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/text_dark"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <!-- Lista de consultas -->
             <LinearLayout
@@ -418,6 +419,13 @@
 
     </ScrollView>
 
+    <!-- Divider Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9E9E9E"
+        android:layout_above="@id/bottomNav" />
+
     <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
@@ -449,7 +457,7 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="@color/text_gray" />
+                android:textColor="@color/teal_icon" />
         </LinearLayout>
 
         <LinearLayout
@@ -463,7 +471,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView
@@ -485,7 +493,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView
@@ -507,7 +515,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView

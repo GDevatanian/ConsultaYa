@@ -17,15 +17,32 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Título -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Header con flecha y título -->
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proximos turnos:"
-                android:textSize="20sp"
-                android:textColor="@color/text_dark"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    app:tint="@color/teal_icon"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proximos turnos:"
+                    android:textSize="20sp"
+                    android:textColor="@color/text_dark"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <!-- Lista de turnos -->
             <LinearLayout
@@ -109,6 +126,13 @@
 
     </LinearLayout>
 
+    <!-- Divider Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9E9E9E"
+        android:layout_above="@id/bottomNav" />
+
     <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
@@ -132,7 +156,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView
@@ -154,7 +178,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView
@@ -198,7 +222,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
+                android:background="@drawable/diamond_shape_gray"
                 android:layout_marginBottom="4dp" />
 
             <TextView
