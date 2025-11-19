@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient">
+
+    <!-- Botón volver -->
+
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Card de resumen -->
+
+            <!-- Anotaciones -->
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="0dp"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                android:text="←"
+                android:textColor="@color/text_dark"
+                android:textSize="34sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/diamond_shape" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nombreDoctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="Dr. Juan Pérez"
+                        android:textColor="@color/text_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/especialidadDoctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="Cardiología"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/fechaHoraConsulta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15/11/2024, 10:30hs."
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anotaciones:"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textAnotaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm."
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:minHeight="120dp"
+                    android:gravity="top" />
+            </LinearLayout>
+
+            <!-- Recetas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recetas:"
+                android:textSize="16sp"
+                android:textColor="@color/text_dark"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receta 1"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receta 2"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_dark" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navBuscar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navTurnos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turnos"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

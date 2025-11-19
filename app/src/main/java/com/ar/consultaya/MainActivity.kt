@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.btnHistorial).setOnClickListener {
-            Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show()
+            mostrarHistorial()
         }
 
         findViewById<android.view.View>(R.id.btnConsultaGeneral).setOnClickListener {
@@ -192,6 +192,83 @@ class MainActivity : AppCompatActivity() {
                 mostrarTurnos()
             }
         }
+
+        findViewById<android.view.View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarHistorial() {
+        setContentView(R.layout.activity_historial)
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle1).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle2).setOnClickListener {
+            mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle3).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle4).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle5).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle6).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+
+        findViewById<android.view.View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarDetalleConsulta(nombre: String, especialidad: String, fechaHora: String, anotaciones: String) {
+        setContentView(R.layout.activity_detalle_consulta)
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            mostrarHistorial()
+        }
+
+        findViewById<TextView>(R.id.nombreDoctor).text = nombre
+        findViewById<TextView>(R.id.especialidadDoctor).text = especialidad
+        findViewById<TextView>(R.id.fechaHoraConsulta).text = fechaHora
+        findViewById<TextView>(R.id.textAnotaciones).text = anotaciones
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
