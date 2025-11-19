@@ -319,7 +319,7 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarListaChats() {
         setContentView(R.layout.activity_lista_chats)
 
-        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
         }
 
@@ -367,7 +367,7 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarChat(nombreDoctor: String) {
         setContentView(R.layout.activity_chat)
 
-        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarListaChats()
         }
 

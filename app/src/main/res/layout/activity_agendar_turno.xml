@@ -31,7 +31,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:padding="4dp"
-                    app:tint="@color/teal_icon"
+                    app:tint="@color/text_dark"
                     xmlns:app="http://schemas.android.com/apk/res-auto"/>
 
                 <TextView

@@ -4,10 +4,72 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
 
+    <!-- Header con flecha y barra de búsqueda -->
+    <LinearLayout
+        android:id="@+id/headerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@color/teal_icon"
+        android:gravity="center_vertical"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="12dp"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            app:tint="#424242"
+            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_field"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Buscar especialidad o nombre"
+                android:textSize="14sp"
+                android:textColor="@color/text_gray" />
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:text="☰"
+                android:textSize="20sp"
+                android:textColor="@color/text_dark"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/headerSearch"
         android:layout_above="@id/bottomNav"
         android:fillViewport="true">
 
@@ -16,68 +78,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
-
-            <!-- Header con flecha y título -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:id="@+id/btnBack"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_arrow_back"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:padding="4dp"
-                    app:tint="@color/teal_icon"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Buscar Médico"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_dark"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-
-            <!-- Barra de búsqueda -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/rounded_field"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
-
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/diamond_shape"
-                    android:layout_marginRight="12dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Buscar especialidad o nombre"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_gray" />
-
-                <TextView
-                    android:id="@+id/btnMenu"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:text="☰"
-                    android:textSize="20sp"
-                    android:textColor="@color/text_dark"
-                    android:gravity="center" />
-            </LinearLayout>
 
             <!-- Lista de médicos -->
             <LinearLayout
