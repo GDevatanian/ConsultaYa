@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.btnMisChats).setOnClickListener {
-            Toast.makeText(this, "Mis chats", Toast.LENGTH_SHORT).show()
+            mostrarListaChats()
         }
 
         findViewById<android.view.View>(R.id.btnHistorial).setOnClickListener {
@@ -269,6 +269,87 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.especialidadDoctor).text = especialidad
         findViewById<TextView>(R.id.fechaHoraConsulta).text = fechaHora
         findViewById<TextView>(R.id.textAnotaciones).text = anotaciones
+
+        findViewById<android.view.View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarListaChats() {
+        setContentView(R.layout.activity_lista_chats)
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.chat1).setOnClickListener {
+            mostrarChat("Dr. Juan Pérez")
+        }
+
+        findViewById<android.view.View>(R.id.chat2).setOnClickListener {
+            mostrarChat("Dra. María García")
+        }
+
+        findViewById<android.view.View>(R.id.chat3).setOnClickListener {
+            mostrarChat("Dr. Carlos López")
+        }
+
+        findViewById<android.view.View>(R.id.chat4).setOnClickListener {
+            mostrarChat("Dra. Ana Martínez")
+        }
+
+        findViewById<android.view.View>(R.id.chat5).setOnClickListener {
+            mostrarChat("Dr. Roberto Sánchez")
+        }
+
+        findViewById<android.view.View>(R.id.chat6).setOnClickListener {
+            mostrarChat("Dra. Laura Fernández")
+        }
+
+        findViewById<android.view.View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarChat(nombreDoctor: String) {
+        setContentView(R.layout.activity_chat)
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            mostrarListaChats()
+        }
+
+        findViewById<TextView>(R.id.nombreDoctorChat).text = nombreDoctor
+
+        findViewById<Button>(R.id.btnEnviar).setOnClickListener {
+            val mensaje = findViewById<EditText>(R.id.editMensaje).text.toString()
+            if (mensaje.isNotEmpty()) {
+                findViewById<EditText>(R.id.editMensaje).text.clear()
+            }
+        }
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
