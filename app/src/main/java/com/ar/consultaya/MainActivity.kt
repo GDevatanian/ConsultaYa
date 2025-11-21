@@ -12,14 +12,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-data class Turno(val nombre: String, val especialidad: String, val fechaHora: String)
+data class Turno(val nombre: String, val especialidad: String, val fechaHora: String, val motivo: String = "")
 
 class MainActivity : AppCompatActivity() {
     private var horarioSeleccionado: String? = null
     private val turnos = mutableListOf(
-        Turno("Dr. Pepe Pepito", "Cardiologia", "10/11/25, 15:00hs"),
-        Turno("Dra. Pepa Pepita", "Dermatologia", "1/12/25, 08:00hs"),
-        Turno("Dr. Juan Perez", "Clinico", "20/02/26, 10:15hs")
+        Turno("Dr. Pepe Pepito", "Cardiologia", "27/11/25, 18:00hs", "Dolor en el pecho y fatiga"),
+        Turno("Dra. Pepa Pepita", "Dermatologia", "1/12/25, 09:00hs", "Control de lunares"),
+        Turno("Dr. Juan Perez", "Clinico", "20/02/26, 10:15hs", "Chequeo general anual")
     )
     private var turnoSeleccionadoParaCancelar: Int = -1
 
@@ -132,9 +132,12 @@ class MainActivity : AppCompatActivity() {
             card.findViewById<TextView>(R.id.nombreMedico).text = turno.nombre
             card.findViewById<TextView>(R.id.especialidadMedico).text = turno.especialidad
             card.findViewById<TextView>(R.id.fechaHora).text = turno.fechaHora
-            card.findViewById<Button>(R.id.btnCancelar).setOnClickListener {
-                mostrarDialogoCancelar(index, turno)
+            
+            // Hacer la card clickeable para navegar a sala de espera
+            card.setOnClickListener {
+                mostrarSalaEspera(turno, index)
             }
+            
             listaTurnos.addView(card)
         }
 
@@ -212,7 +215,7 @@ class MainActivity : AppCompatActivity() {
                 var fecha = findViewById<TextView>(R.id.txtFecha).text.toString()
                 fecha = fecha.replace("/2025", "/25").replace("/2026", "/26")
                 val fechaHora = "$fecha, ${horarioSeleccionado}hs"
-                turnos.add(Turno(nombre, especialidad, fechaHora))
+                turnos.add(Turno(nombre, especialidad, fechaHora, motivo))
                 Toast.makeText(this, "Turno confirmado", Toast.LENGTH_SHORT).show()
                 mostrarTurnos()
             }
@@ -522,6 +525,73 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        findViewById<android.view.View>(R.id.navHome).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
+            mostrarBuscarMedico()
+        }
+
+        findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+    }
+
+    private fun mostrarDialogoCancelarEnSalaEspera(index: Int, turno: Turno) {
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Cancelar turno")
+        builder.setMessage("¿Estás seguro que deseas cancelar el turno con ${turno.nombre} de ${turno.especialidad} el ${turno.fechaHora}?")
+        
+        builder.setPositiveButton("Cancelar turno") { dialog, _ ->
+            turnos.removeAt(index)
+            dialog.dismiss()
+            Toast.makeText(this, "Turno cancelado", Toast.LENGTH_SHORT).show()
+            mostrarTurnos() // Solo navegar después de confirmar
+        }
+        
+        builder.setNegativeButton("Volver") { dialog, _ ->
+            dialog.dismiss()
+            // Se queda en la sala de espera
+        }
+        
+        builder.show()
+    }
+
+    private fun mostrarSalaEspera(turno: Turno, index: Int) {
+        setContentView(R.layout.activity_sala_espera)
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            mostrarTurnos()
+        }
+
+        // Configurar información del turno
+        findViewById<TextView>(R.id.nombreProfesional).text = turno.nombre
+        findViewById<TextView>(R.id.especialidadProfesional).text = turno.especialidad
+        
+        // Formatear fecha con día de la semana
+        val fechaFormateada = "Martes ${turno.fechaHora}"
+        findViewById<TextView>(R.id.fechaHoraTurno).text = fechaFormateada
+        
+        findViewById<TextView>(R.id.descripcionTurno).text = turno.motivo
+
+        // Botón Ingresar a la llamada
+        findViewById<Button>(R.id.btnIngresarLlamada).setOnClickListener {
+            Toast.makeText(this, "Ingresando a videoconsulta...", Toast.LENGTH_SHORT).show()
+        }
+
+        // Botón Cancelar consulta - mostrar diálogo de confirmación
+        findViewById<Button>(R.id.btnCancelarConsulta).setOnClickListener {
+            mostrarDialogoCancelarEnSalaEspera(index, turno)
+        }
+
+        // Navigation bar
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
         }

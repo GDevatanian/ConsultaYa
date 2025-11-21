@@ -65,8 +65,8 @@
                     android:padding="16dp">
 
                     <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/diamond_shape"
                         android:layout_marginRight="16dp" />
 
