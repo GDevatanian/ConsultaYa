@@ -240,10 +240,77 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarHistorial() {
         setContentView(R.layout.activity_historial)
 
+        val listaOriginal = findViewById<LinearLayout>(R.id.listaConsultas)
+        val listaFechaDesc = findViewById<LinearLayout>(R.id.listaConsultasFechaDesc)
+        val listaNombreAsc = findViewById<LinearLayout>(R.id.listaConsultasNombreAsc)
+        val listaNombreDesc = findViewById<LinearLayout>(R.id.listaConsultasNombreDesc)
+        val menuFiltros = findViewById<LinearLayout>(R.id.menuFiltros)
+        val overlayFiltros = findViewById<View>(R.id.overlayFiltros)
+        val labelFiltroActivo = findViewById<TextView>(R.id.labelFiltroActivo)
+
+        fun ocultarMenu() {
+            menuFiltros.visibility = View.GONE
+            overlayFiltros.visibility = View.GONE
+        }
+
+        fun mostrarMenu() {
+            menuFiltros.visibility = View.VISIBLE
+            overlayFiltros.visibility = View.VISIBLE
+        }
+
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
         }
 
+        findViewById<TextView>(R.id.btnFiltro).setOnClickListener {
+            if (menuFiltros.visibility == View.VISIBLE) {
+                ocultarMenu()
+            } else {
+                mostrarMenu()
+            }
+        }
+
+        overlayFiltros.setOnClickListener {
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroFechaAsc).setOnClickListener {
+            listaOriginal.visibility = View.VISIBLE
+            listaFechaDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Ordenado por: Fecha (Más reciente primero)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroFechaDesc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaFechaDesc.visibility = View.VISIBLE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Ordenado por: Fecha (Más antiguo primero)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroNombreAsc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaFechaDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.VISIBLE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Ordenado por: Nombre (A-Z)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroNombreDesc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaFechaDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.VISIBLE
+            labelFiltroActivo.text = "Ordenado por: Nombre (Z-A)"
+            ocultarMenu()
+        }
+
+        // Listeners para lista original
         findViewById<Button>(R.id.btnVerDetalle1).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
@@ -265,6 +332,81 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnVerDetalle6).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+
+        // Listeners para lista fecha descendente
+        findViewById<Button>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle2_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle3_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle4_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+
+        // Listeners para lista nombre ascendente
+        findViewById<Button>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle2_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle3_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle4_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle5_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+
+        // Listeners para lista nombre descendente
+        findViewById<Button>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle2_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle3_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle4_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+
+        findViewById<Button>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
 
