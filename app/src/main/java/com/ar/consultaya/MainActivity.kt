@@ -404,9 +404,9 @@ class MainActivity : AppCompatActivity() {
                     setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
                 }
                 nombre?.apply {
-                    textSize = 12f
+                    textSize = 14f
                     setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_gray))
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
                 }
             }
         }
@@ -416,9 +416,9 @@ class MainActivity : AppCompatActivity() {
                 val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
                 val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
                 fecha?.apply {
-                    textSize = 12f
+                    textSize = 14f
                     setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_gray))
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
                 }
                 nombre?.apply {
                     textSize = 16f
