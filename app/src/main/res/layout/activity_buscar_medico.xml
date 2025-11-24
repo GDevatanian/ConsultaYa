@@ -4,6 +4,181 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
 
+    <!-- Overlay para cerrar menú al tocar fuera -->
+    <View
+        android:id="@+id/overlayFiltros"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Menú de filtros flotante -->
+    <LinearLayout
+        android:id="@+id/menuFiltros"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_button"
+        android:padding="8dp"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtrar por:"
+            android:textSize="14sp"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:id="@+id/btnFiltroEspecialidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Especialidad"
+                android:textSize="12sp"
+                android:textColor="@color/text_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textSize="14sp"
+                android:textColor="@color/teal_icon" />
+        </LinearLayout>
+
+        <!-- Submenú de especialidades -->
+        <LinearLayout
+            android:id="@+id/submenuEspecialidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp">
+
+            <LinearLayout
+                android:id="@+id/btnEspecialidadCardiologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cardiologia"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEspecialidadClinico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Clinico"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEspecialidadDermatologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dermatologia"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnFiltroNombreAsc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombre (A-Z)"
+                android:textSize="12sp"
+                android:textColor="@color/text_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textSize="14sp"
+                android:textColor="@color/teal_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnFiltroNombreDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombre (Z-A)"
+                android:textSize="12sp"
+                android:textColor="@color/text_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textSize="14sp"
+                android:textColor="@color/teal_icon" />
+        </LinearLayout>
+    </LinearLayout>
+
     <!-- Header con flecha y barra de búsqueda -->
     <LinearLayout
         android:id="@+id/headerSearch"
@@ -78,6 +253,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
+
+            <!-- Etiqueta de filtro activo -->
+            <TextView
+                android:id="@+id/labelFiltroActivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtrado por: Sin filtro"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray"
+                android:layout_marginBottom="12dp" />
 
             <!-- Lista de médicos -->
             <LinearLayout
@@ -263,6 +448,584 @@
 
                     <Button
                         android:id="@+id/btnAgendar3"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Lista filtrada por Cardiologia -->
+            <LinearLayout
+                android:id="@+id/listaMedicosCardiologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/cardMedico1_cardiologia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Pepe Pepito"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.8 (128)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar1_cardiologia"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Lista filtrada por Clinico -->
+            <LinearLayout
+                android:id="@+id/listaMedicosClinico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/cardMedico1_clinico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Juan Perez"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Clinico"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.9 (203)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar1_clinico"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Lista filtrada por Dermatologia -->
+            <LinearLayout
+                android:id="@+id/listaMedicosDermatologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/cardMedico1_dermatologia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dra. Pepa Pepita"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dermatologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.6 (95)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar1_dermatologia"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Lista filtrada por Nombre A-Z -->
+            <LinearLayout
+                android:id="@+id/listaMedicosNombreAsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Card Médico 1 - Dr. Juan Perez -->
+                <LinearLayout
+                    android:id="@+id/cardMedico1_nomAsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Juan Perez"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Clinico"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.9 (203)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar3_nomAsc"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+                <!-- Card Médico 2 - Dr. Pepe Pepito -->
+                <LinearLayout
+                    android:id="@+id/cardMedico2_nomAsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Pepe Pepito"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.8 (128)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar1_nomAsc"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+                <!-- Card Médico 3 - Dra. Pepa Pepita -->
+                <LinearLayout
+                    android:id="@+id/cardMedico3_nomAsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dra. Pepa Pepita"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dermatologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.6 (95)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar2_nomAsc"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Lista filtrada por Nombre Z-A -->
+            <LinearLayout
+                android:id="@+id/listaMedicosNombreDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Card Médico 1 - Dra. Pepa Pepita -->
+                <LinearLayout
+                    android:id="@+id/cardMedico1_nomDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dra. Pepa Pepita"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dermatologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.6 (95)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar2_nomDesc"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+                <!-- Card Médico 2 - Dr. Pepe Pepito -->
+                <LinearLayout
+                    android:id="@+id/cardMedico2_nomDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Pepe Pepito"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiologia"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.8 (128)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar1_nomDesc"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="Agendar"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_agendar"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+                <!-- Card Médico 3 - Dr. Juan Perez -->
+                <LinearLayout
+                    android:id="@+id/cardMedico3_nomDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/diamond_shape"
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Juan Perez"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Clinico"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_gray"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◇ 4.9 (203)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnAgendar3_nomDesc"
                         android:layout_width="80dp"
                         android:layout_height="40dp"
                         android:text="Agendar"
