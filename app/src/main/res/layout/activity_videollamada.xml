@@ -5,12 +5,14 @@
     android:background="#000000">
 
     <!-- Video feed principal del doctor (ocupa toda la pantalla) -->
-    <View
+    <ImageView
         android:id="@+id/videoDoctor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/controlBar"
-        android:background="#E0E0E0" />
+        android:src="@drawable/doc"
+        android:scaleType="centerCrop"
+        android:contentDescription="Video del Doctor" />
 
     <!-- Nombre del doctor arriba (superpuesto) -->
     <TextView
@@ -22,7 +24,8 @@
         android:layout_marginTop="16dp"
         android:text="Nombre doctor"
         android:textSize="18sp"
-        android:textColor="#000000" />
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <!-- Video feed del paciente (picture-in-picture, abajo a la derecha) -->
     <RelativeLayout
@@ -32,28 +35,38 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/video_container_background">
+        android:layout_marginBottom="100dp">
 
         <!-- Video del paciente -->
-        <View
+        <ImageView
             android:id="@+id/videoPaciente"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/video_container_background" />
+            android:src="@drawable/paciente"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:contentDescription="Imagen del Paciente" />
 
         <!-- Botón de dar vuelta cámara (arriba a la derecha) -->
         <ImageButton
             android:id="@+id/btnFlipCamera"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_flip_camera"
             android:background="@drawable/rounded_button"
+            android:padding="4dp"
             android:contentDescription="Dar vuelta cámara" />
+
+        <!-- Texto "Paciente/usuario" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="10sp"
+            android:layout_marginBottom="4dp" />
 
     </RelativeLayout>
 
