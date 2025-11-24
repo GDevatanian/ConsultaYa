@@ -39,7 +39,7 @@
             android:layout_marginBottom="4dp" />
 
         <LinearLayout
-            android:id="@+id/btnFiltroEspecialidadAsc"
+            android:id="@+id/btnFiltroEspecialidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Especialidad (A-Z)"
+                android:text="Especialidad"
                 android:textSize="12sp"
                 android:textColor="@color/text_dark" />
 
@@ -63,29 +63,69 @@
                 android:textColor="@color/teal_icon" />
         </LinearLayout>
 
+        <!-- Submenú de especialidades -->
         <LinearLayout
-            android:id="@+id/btnFiltroEspecialidadDesc"
+            android:id="@+id/submenuEspecialidades"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="8dp"
-            android:background="@android:color/transparent">
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/btnEspecialidadCardiologia"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Especialidad (Z-A)"
-                android:textSize="12sp"
-                android:textColor="@color/text_dark" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cardiologia"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEspecialidadClinico"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=">"
-                android:textSize="14sp"
-                android:textColor="@color/teal_icon" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Clinico"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEspecialidadDermatologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dermatologia"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dark" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -419,17 +459,16 @@
 
             </LinearLayout>
 
-            <!-- Lista filtrada por Especialidad A-Z -->
+            <!-- Lista filtrada por Cardiologia -->
             <LinearLayout
-                android:id="@+id/listaMedicosEspecialidadAsc"
+                android:id="@+id/listaMedicosCardiologia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <!-- Card Médico 1 - Cardiologia -->
                 <LinearLayout
-                    android:id="@+id/cardMedico1_espAsc"
+                    android:id="@+id/cardMedico1_cardiologia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -476,125 +515,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnAgendar1_espAsc"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:text="Agendar"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:background="@drawable/button_agendar"
-                        android:layout_marginLeft="12dp" />
-                </LinearLayout>
-
-                <!-- Card Médico 2 - Clinico -->
-                <LinearLayout
-                    android:id="@+id/cardMedico2_espAsc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dr. Juan Perez"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_dark"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Clinico"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_gray"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="◇ 4.9 (203)"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_gray" />
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnAgendar3_espAsc"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:text="Agendar"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:background="@drawable/button_agendar"
-                        android:layout_marginLeft="12dp" />
-                </LinearLayout>
-
-                <!-- Card Médico 3 - Dermatologia -->
-                <LinearLayout
-                    android:id="@+id/cardMedico3_espAsc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dra. Pepa Pepita"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_dark"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dermatologia"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_gray"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="◇ 4.6 (95)"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_gray" />
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnAgendar2_espAsc"
+                        android:id="@+id/btnAgendar1_cardiologia"
                         android:layout_width="80dp"
                         android:layout_height="40dp"
                         android:text="Agendar"
@@ -606,76 +527,16 @@
 
             </LinearLayout>
 
-            <!-- Lista filtrada por Especialidad Z-A -->
+            <!-- Lista filtrada por Clinico -->
             <LinearLayout
-                android:id="@+id/listaMedicosEspecialidadDesc"
+                android:id="@+id/listaMedicosClinico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <!-- Card Médico 1 - Dermatologia -->
                 <LinearLayout
-                    android:id="@+id/cardMedico1_espDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp">
-
-                    <View
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dra. Pepa Pepita"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_dark"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dermatologia"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_gray"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="◇ 4.6 (95)"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_gray" />
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnAgendar2_espDesc"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:text="Agendar"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:background="@drawable/button_agendar"
-                        android:layout_marginLeft="12dp" />
-                </LinearLayout>
-
-                <!-- Card Médico 2 - Clinico -->
-                <LinearLayout
-                    android:id="@+id/cardMedico2_espDesc"
+                    android:id="@+id/cardMedico1_clinico"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -722,7 +583,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnAgendar3_espDesc"
+                        android:id="@+id/btnAgendar1_clinico"
                         android:layout_width="80dp"
                         android:layout_height="40dp"
                         android:text="Agendar"
@@ -732,9 +593,18 @@
                         android:layout_marginLeft="12dp" />
                 </LinearLayout>
 
-                <!-- Card Médico 3 - Cardiologia -->
+            </LinearLayout>
+
+            <!-- Lista filtrada por Dermatologia -->
+            <LinearLayout
+                android:id="@+id/listaMedicosDermatologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
                 <LinearLayout
-                    android:id="@+id/cardMedico3_espDesc"
+                    android:id="@+id/cardMedico1_dermatologia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -758,7 +628,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Pepe Pepito"
+                            android:text="Dra. Pepa Pepita"
                             android:textSize="16sp"
                             android:textColor="@color/text_dark"
                             android:textStyle="bold"
@@ -767,7 +637,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cardiologia"
+                            android:text="Dermatologia"
                             android:textSize="14sp"
                             android:textColor="@color/text_gray"
                             android:layout_marginBottom="4dp" />
@@ -775,13 +645,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="◇ 4.8 (128)"
+                            android:text="◇ 4.6 (95)"
                             android:textSize="12sp"
                             android:textColor="@color/text_gray" />
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnAgendar1_espDesc"
+                        android:id="@+id/btnAgendar1_dermatologia"
                         android:layout_width="80dp"
                         android:layout_height="40dp"
                         android:text="Agendar"
