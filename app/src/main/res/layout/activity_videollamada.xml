@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Video feed principal del doctor (ocupa toda la pantalla) -->
+    <View
+        android:id="@+id/videoDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controlBar"
+        android:background="#E0E0E0" />
+
+    <!-- Nombre del doctor arriba (superpuesto) -->
+    <TextView
+        android:id="@+id/nombreDoctorVideollamada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Nombre doctor"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <!-- Video feed del paciente (picture-in-picture, abajo a la derecha) -->
+    <RelativeLayout
+        android:id="@+id/videoPacienteContainer"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/video_container_background">
+
+        <!-- Video del paciente -->
+        <View
+            android:id="@+id/videoPaciente"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/video_container_background" />
+
+        <!-- Botón de dar vuelta cámara (arriba a la derecha) -->
+        <ImageButton
+            android:id="@+id/btnFlipCamera"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_flip_camera"
+            android:background="@drawable/rounded_button"
+            android:contentDescription="Dar vuelta cámara" />
+
+    </RelativeLayout>
+
+    <!-- Barra de controles abajo -->
+    <LinearLayout
+        android:id="@+id/controlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#424242"
+        android:padding="16dp">
+
+        <!-- Botón 1: Prender/Apagar cámara -->
+        <ImageButton
+            android:id="@+id/btnToggleVideo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_video"
+            android:background="@drawable/button_circle_white"
+            android:padding="12dp"
+            android:contentDescription="Prender/Apagar cámara" />
+
+        <!-- Botón 2: Silenciar llamada -->
+        <ImageButton
+            android:id="@+id/btnToggleVolume"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_volume_up"
+            android:background="@drawable/button_circle_white"
+            android:padding="12dp"
+            android:contentDescription="Silenciar llamada" />
+
+        <!-- Botón 3: Mutear micrófono -->
+        <ImageButton
+            android:id="@+id/btnToggleMic"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_mic"
+            android:background="@drawable/button_circle_white"
+            android:padding="12dp"
+            android:contentDescription="Mutear micrófono" />
+
+        <!-- Botón 4: Finalizar llamada -->
+        <ImageButton
+            android:id="@+id/btnEndCall"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_call_end"
+            android:background="@drawable/button_circle_red"
+            android:padding="12dp"
+            android:contentDescription="Finalizar llamada" />
+
+    </LinearLayout>
+
+</RelativeLayout>

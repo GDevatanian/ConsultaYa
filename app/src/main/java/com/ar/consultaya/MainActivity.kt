@@ -583,7 +583,7 @@ class MainActivity : AppCompatActivity() {
 
         // Botón Ingresar a la llamada
         findViewById<Button>(R.id.btnIngresarLlamada).setOnClickListener {
-            Toast.makeText(this, "Ingresando a videoconsulta...", Toast.LENGTH_SHORT).show()
+            mostrarVideollamada(turno)
         }
 
         // Botón Cancelar consulta - mostrar diálogo de confirmación
@@ -609,5 +609,71 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+    }
+
+    private fun mostrarVideollamada(turno: Turno) {
+        setContentView(R.layout.activity_videollamada)
+
+        // Variables de estado
+        var videoEncendido = true
+        var micEncendido = true
+        var volumenEncendido = true
+
+        // Configurar nombre del doctor
+        findViewById<TextView>(R.id.nombreDoctorVideollamada).text = turno.nombre
+
+        // Botón 1: Prender/Apagar cámara
+        val btnToggleVideo = findViewById<android.widget.ImageButton>(R.id.btnToggleVideo)
+        btnToggleVideo.setOnClickListener {
+            videoEncendido = !videoEncendido
+            if (videoEncendido) {
+                btnToggleVideo.setImageResource(R.drawable.ic_video)
+                mostrarDialogo("Cámara encendida")
+            } else {
+                btnToggleVideo.setImageResource(R.drawable.ic_video_off)
+                mostrarDialogo("Cámara apagada")
+            }
+        }
+
+        // Botón 2: Silenciar llamada
+        val btnToggleVolume = findViewById<android.widget.ImageButton>(R.id.btnToggleVolume)
+        btnToggleVolume.setOnClickListener {
+            volumenEncendido = !volumenEncendido
+            if (volumenEncendido) {
+                btnToggleVolume.setImageResource(R.drawable.ic_volume_up)
+                mostrarDialogo("Llamada con sonido")
+            } else {
+                btnToggleVolume.setImageResource(R.drawable.ic_volume_off)
+                mostrarDialogo("Llamada silenciada")
+            }
+        }
+
+        // Botón 3: Mutear micrófono
+        val btnToggleMic = findViewById<android.widget.ImageButton>(R.id.btnToggleMic)
+        btnToggleMic.setOnClickListener {
+            micEncendido = !micEncendido
+            if (micEncendido) {
+                btnToggleMic.setImageResource(R.drawable.ic_mic)
+                mostrarDialogo("Micrófono activado")
+            } else {
+                btnToggleMic.setImageResource(R.drawable.ic_mic_off)
+                mostrarDialogo("Micrófono silenciado")
+            }
+        }
+
+        // Botón 4: Finalizar llamada
+        findViewById<android.widget.ImageButton>(R.id.btnEndCall).setOnClickListener {
+            mostrarDialogo("Llamada finalizada")
+            mostrarHome()
+        }
+
+        // Botón 5: Dar vuelta cámara (dentro del recuadro del paciente)
+        findViewById<android.widget.ImageButton>(R.id.btnFlipCamera).setOnClickListener {
+            mostrarDialogo("Rotar cámara")
+        }
+    }
+
+    private fun mostrarDialogo(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
 }

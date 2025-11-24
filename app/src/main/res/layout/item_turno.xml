@@ -48,5 +48,12 @@
             android:textColor="@color/text_gray" />
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_forward"
+        android:layout_marginStart="12dp"
+        android:contentDescription="Ver detalles del turno" />
+
 </LinearLayout>
 
