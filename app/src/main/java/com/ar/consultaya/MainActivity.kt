@@ -82,8 +82,79 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarBuscarMedico() {
         setContentView(R.layout.activity_buscar_medico)
 
+        val listaOriginal = findViewById<LinearLayout>(R.id.listaMedicos)
+        val listaEspecialidadAsc = findViewById<LinearLayout>(R.id.listaMedicosEspecialidadAsc)
+        val listaEspecialidadDesc = findViewById<LinearLayout>(R.id.listaMedicosEspecialidadDesc)
+        val listaNombreAsc = findViewById<LinearLayout>(R.id.listaMedicosNombreAsc)
+        val listaNombreDesc = findViewById<LinearLayout>(R.id.listaMedicosNombreDesc)
+        val menuFiltros = findViewById<LinearLayout>(R.id.menuFiltros)
+        val overlayFiltros = findViewById<View>(R.id.overlayFiltros)
+        val labelFiltroActivo = findViewById<TextView>(R.id.labelFiltroActivo)
+
+        fun ocultarMenu() {
+            menuFiltros.visibility = View.GONE
+            overlayFiltros.visibility = View.GONE
+        }
+
+        fun mostrarMenu() {
+            menuFiltros.visibility = View.VISIBLE
+            overlayFiltros.visibility = View.VISIBLE
+        }
+
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
+        }
+
+        findViewById<TextView>(R.id.btnMenu).setOnClickListener {
+            if (menuFiltros.visibility == View.VISIBLE) {
+                ocultarMenu()
+            } else {
+                mostrarMenu()
+            }
+        }
+
+        overlayFiltros.setOnClickListener {
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroEspecialidadAsc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaEspecialidadAsc.visibility = View.VISIBLE
+            listaEspecialidadDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Filtrado por: Especialidad (A-Z)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroEspecialidadDesc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaEspecialidadAsc.visibility = View.GONE
+            listaEspecialidadDesc.visibility = View.VISIBLE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Filtrado por: Especialidad (Z-A)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroNombreAsc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaEspecialidadAsc.visibility = View.GONE
+            listaEspecialidadDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.VISIBLE
+            listaNombreDesc.visibility = View.GONE
+            labelFiltroActivo.text = "Filtrado por: Nombre (A-Z)"
+            ocultarMenu()
+        }
+
+        findViewById<LinearLayout>(R.id.btnFiltroNombreDesc).setOnClickListener {
+            listaOriginal.visibility = View.GONE
+            listaEspecialidadAsc.visibility = View.GONE
+            listaEspecialidadDesc.visibility = View.GONE
+            listaNombreAsc.visibility = View.GONE
+            listaNombreDesc.visibility = View.VISIBLE
+            labelFiltroActivo.text = "Filtrado por: Nombre (Z-A)"
+            ocultarMenu()
         }
 
         findViewById<Button>(R.id.btnAgendar1).setOnClickListener {
@@ -95,6 +166,54 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnAgendar3).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar1_espAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar2_espAsc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar3_espAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar1_espDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar2_espDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar3_espDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar1_nomAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar2_nomAsc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar3_nomAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar1_nomDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar2_nomDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
+        }
+
+        findViewById<Button>(R.id.btnAgendar3_nomDesc).setOnClickListener {
             mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
         }
 
