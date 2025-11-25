@@ -29,12 +29,17 @@
             app:tint="@color/text_dark"
             xmlns:app="http://schemas.android.com/apk/res-auto"/>
 
-        <View
+        <ImageView
+            android:id="@+id/imagenDoctorChat"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="12dp"
-            android:background="@drawable/diamond_shape" />
+            android:background="@drawable/avatar_circle_background"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:src="@drawable/juan_perez"
+            android:contentDescription="@null" />
 
         <TextView
             android:id="@+id/nombreDoctorChat"

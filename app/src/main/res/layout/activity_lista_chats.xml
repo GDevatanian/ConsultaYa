@@ -64,11 +64,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/juan_perez"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -113,11 +117,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/maria_garcia"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -162,11 +170,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/carlos_lopez"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -211,11 +223,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/ana_martinez"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -260,11 +276,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/roberto_sanchez"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -309,11 +329,15 @@
                     android:gravity="center_vertical"
                     android:padding="16dp">
 
-                    <View
+                    <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/avatar_circle_background"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/laura_fernandez"
+                        android:contentDescription="@null" />
 
                     <LinearLayout
                         android:layout_width="0dp"

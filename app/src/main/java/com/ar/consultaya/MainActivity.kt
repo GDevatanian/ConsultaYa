@@ -184,6 +184,7 @@ class MainActivity : AppCompatActivity() {
             card.findViewById<TextView>(R.id.nombreMedico).text = turno.nombre
             card.findViewById<TextView>(R.id.especialidadMedico).text = turno.especialidad
             card.findViewById<TextView>(R.id.fechaHora).text = turno.fechaHora
+            card.findViewById<ImageView>(R.id.imagenMedico).setImageResource(obtenerFotoDoctor(turno.nombre))
             
             card.setOnClickListener {
                 mostrarSalaEspera(turno, index)
@@ -240,6 +241,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.nombreMedicoElegido).text = nombre
         findViewById<TextView>(R.id.especialidadMedicoElegido).text = especialidad
         findViewById<TextView>(R.id.ratingMedicoElegido).text = rating
+        findViewById<ImageView>(R.id.imagenMedicoElegido).setImageResource(obtenerFotoDoctor(nombre))
 
         val horarios = listOf(
             R.id.btnHora1, R.id.btnHora2, R.id.btnHora3, R.id.btnHora4, R.id.btnHora5,
@@ -490,6 +492,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.especialidadDoctor).text = especialidad
         findViewById<TextView>(R.id.fechaHoraConsulta).text = fechaHora
         findViewById<TextView>(R.id.textAnotaciones).text = anotaciones
+        findViewById<ImageView>(R.id.imagenDoctorDetalle).setImageResource(obtenerFotoDoctor(nombre))
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
@@ -564,6 +567,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.nombreDoctorChat).text = nombreDoctor
+        findViewById<ImageView>(R.id.imagenDoctorChat).setImageResource(obtenerFotoDoctor(nombreDoctor))
 
         findViewById<Button>(R.id.btnEnviar).setOnClickListener {
             val mensaje = findViewById<EditText>(R.id.editMensaje).text.toString()
@@ -619,6 +623,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.nombreProfesional).text = turno.nombre
         findViewById<TextView>(R.id.especialidadProfesional).text = turno.especialidad
+        findViewById<ImageView>(R.id.imagenProfesional).setImageResource(obtenerFotoDoctor(turno.nombre))
         
         val fechaFormateada = "Martes ${turno.fechaHora}"
         findViewById<TextView>(R.id.fechaHoraTurno).text = fechaFormateada
@@ -649,6 +654,20 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
+        }
+    }
+
+    private fun obtenerFotoDoctor(nombre: String): Int {
+        return when (nombre) {
+            "Dr. Pepe Pepito" -> R.drawable.pepe_pepito
+            "Dra. Pepa Pepita" -> R.drawable.pepa_pepita
+            "Dr. Juan Pérez", "Dr. Juan Perez" -> R.drawable.juan_perez
+            "Dra. María García", "Dra. Maria Garcia" -> R.drawable.maria_garcia
+            "Dr. Carlos López", "Dr. Carlos Lopez" -> R.drawable.carlos_lopez
+            "Dra. Ana Martínez", "Dra. Ana Martinez" -> R.drawable.ana_martinez
+            "Dr. Roberto Sánchez", "Dr. Roberto Sanchez" -> R.drawable.roberto_sanchez
+            "Dra. Laura Fernández", "Dra. Laura Fernandez" -> R.drawable.laura_fernandez
+            else -> R.drawable.doc
         }
     }
 }
