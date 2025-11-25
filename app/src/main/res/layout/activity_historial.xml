@@ -231,8 +231,9 @@
                         <View
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_marginRight="16dp"
                             android:background="@drawable/diamond_shape"
-                            android:layout_marginRight="16dp" />
+                            android:visibility="visible" />
 
                         <LinearLayout
                             android:layout_width="0dp"

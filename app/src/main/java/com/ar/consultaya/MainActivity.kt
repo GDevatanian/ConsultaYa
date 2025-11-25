@@ -82,21 +82,17 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarBuscarMedico() {
         setContentView(R.layout.activity_buscar_medico)
 
-        val listaOriginal = findViewById<LinearLayout>(R.id.listaMedicos)
-        val listaCardiologia = findViewById<LinearLayout>(R.id.listaMedicosCardiologia)
-        val listaClinico = findViewById<LinearLayout>(R.id.listaMedicosClinico)
-        val listaDermatologia = findViewById<LinearLayout>(R.id.listaMedicosDermatologia)
+        val listaEspecialidad = findViewById<LinearLayout>(R.id.listaMedicosEspecialidad)
         val listaNombreAsc = findViewById<LinearLayout>(R.id.listaMedicosNombreAsc)
-        val listaNombreDesc = findViewById<LinearLayout>(R.id.listaMedicosNombreDesc)
         val menuFiltros = findViewById<LinearLayout>(R.id.menuFiltros)
-        val submenuEspecialidades = findViewById<LinearLayout>(R.id.submenuEspecialidades)
         val overlayFiltros = findViewById<View>(R.id.overlayFiltros)
         val labelFiltroActivo = findViewById<TextView>(R.id.labelFiltroActivo)
+        val btnFiltro = findViewById<TextView>(R.id.btnFiltro)
+        val btnBack = findViewById<ImageView>(R.id.btnBack)
 
         fun ocultarMenu() {
             menuFiltros.visibility = View.GONE
             overlayFiltros.visibility = View.GONE
-            submenuEspecialidades.visibility = View.GONE
         }
 
         fun mostrarMenu() {
@@ -104,11 +100,11 @@ class MainActivity : AppCompatActivity() {
             overlayFiltros.visibility = View.VISIBLE
         }
 
-        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+        btnBack.setOnClickListener {
             mostrarHome()
         }
 
-        findViewById<TextView>(R.id.btnMenu).setOnClickListener {
+        btnFiltro.setOnClickListener {
             if (menuFiltros.visibility == View.VISIBLE) {
                 ocultarMenu()
             } else {
@@ -121,113 +117,36 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.btnFiltroEspecialidad).setOnClickListener {
-            if (submenuEspecialidades.visibility == View.VISIBLE) {
-                submenuEspecialidades.visibility = View.GONE
-            } else {
-                submenuEspecialidades.visibility = View.VISIBLE
-            }
-        }
-
-        findViewById<LinearLayout>(R.id.btnEspecialidadCardiologia).setOnClickListener {
-            listaOriginal.visibility = View.GONE
-            listaCardiologia.visibility = View.VISIBLE
-            listaClinico.visibility = View.GONE
-            listaDermatologia.visibility = View.GONE
+            listaEspecialidad.visibility = View.VISIBLE
             listaNombreAsc.visibility = View.GONE
-            listaNombreDesc.visibility = View.GONE
-            labelFiltroActivo.text = "Filtrado por: Cardiologia"
-            ocultarMenu()
-        }
-
-        findViewById<LinearLayout>(R.id.btnEspecialidadClinico).setOnClickListener {
-            listaOriginal.visibility = View.GONE
-            listaCardiologia.visibility = View.GONE
-            listaClinico.visibility = View.VISIBLE
-            listaDermatologia.visibility = View.GONE
-            listaNombreAsc.visibility = View.GONE
-            listaNombreDesc.visibility = View.GONE
-            labelFiltroActivo.text = "Filtrado por: Clinico"
-            ocultarMenu()
-        }
-
-        findViewById<LinearLayout>(R.id.btnEspecialidadDermatologia).setOnClickListener {
-            listaOriginal.visibility = View.GONE
-            listaCardiologia.visibility = View.GONE
-            listaClinico.visibility = View.GONE
-            listaDermatologia.visibility = View.VISIBLE
-            listaNombreAsc.visibility = View.GONE
-            listaNombreDesc.visibility = View.GONE
-            labelFiltroActivo.text = "Filtrado por: Dermatologia"
+            labelFiltroActivo.text = "Ordenado por: Especialidad"
             ocultarMenu()
         }
 
         findViewById<LinearLayout>(R.id.btnFiltroNombreAsc).setOnClickListener {
-            listaOriginal.visibility = View.GONE
-            listaCardiologia.visibility = View.GONE
-            listaClinico.visibility = View.GONE
-            listaDermatologia.visibility = View.GONE
+            listaEspecialidad.visibility = View.GONE
             listaNombreAsc.visibility = View.VISIBLE
-            listaNombreDesc.visibility = View.GONE
-            labelFiltroActivo.text = "Filtrado por: Nombre (A-Z)"
-            ocultarMenu()
-        }
-
-        findViewById<LinearLayout>(R.id.btnFiltroNombreDesc).setOnClickListener {
-            listaOriginal.visibility = View.GONE
-            listaCardiologia.visibility = View.GONE
-            listaClinico.visibility = View.GONE
-            listaDermatologia.visibility = View.GONE
-            listaNombreAsc.visibility = View.GONE
-            listaNombreDesc.visibility = View.VISIBLE
-            labelFiltroActivo.text = "Filtrado por: Nombre (Z-A)"
+            labelFiltroActivo.text = "Ordenado por: Nombre (A-Z)"
             ocultarMenu()
         }
 
         findViewById<Button>(R.id.btnAgendar1).setOnClickListener {
             mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
         }
-
         findViewById<Button>(R.id.btnAgendar2).setOnClickListener {
             mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
         }
-
         findViewById<Button>(R.id.btnAgendar3).setOnClickListener {
             mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
         }
 
-        findViewById<Button>(R.id.btnAgendar1_cardiologia).setOnClickListener {
+        findViewById<Button>(R.id.btnAgendar1_nombre).setOnClickListener {
             mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
         }
-
-        findViewById<Button>(R.id.btnAgendar1_clinico).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar1_dermatologia).setOnClickListener {
+        findViewById<Button>(R.id.btnAgendar2_nombre).setOnClickListener {
             mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
         }
-
-        findViewById<Button>(R.id.btnAgendar1_nomAsc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar2_nomAsc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar3_nomAsc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar1_nomDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Pepe Pepito", "Cardiologia", "◇ 4.8 (128)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar2_nomDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Pepa Pepita", "Dermatologia", "◇ 4.6 (95)")
-        }
-
-        findViewById<Button>(R.id.btnAgendar3_nomDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnAgendar3_nombre).setOnClickListener {
             mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
         }
 
@@ -266,7 +185,6 @@ class MainActivity : AppCompatActivity() {
             card.findViewById<TextView>(R.id.especialidadMedico).text = turno.especialidad
             card.findViewById<TextView>(R.id.fechaHora).text = turno.fechaHora
             
-            // Hacer la card clickeable para navegar a sala de espera
             card.setOnClickListener {
                 mostrarSalaEspera(turno, index)
             }
@@ -394,59 +312,6 @@ class MainActivity : AppCompatActivity() {
             overlayFiltros.visibility = View.VISIBLE
         }
 
-        fun aplicarEstiloFecha() {
-            for (i in 1..12) {
-                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
-                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
-                fecha?.apply {
-                    textSize = 16f
-                    setTypeface(null, android.graphics.Typeface.BOLD)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-                nombre?.apply {
-                    textSize = 14f
-                    setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-            }
-        }
-
-        fun aplicarEstiloNombre() {
-            for (i in 1..12) {
-                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
-                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
-                fecha?.apply {
-                    textSize = 14f
-                    setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-                nombre?.apply {
-                    textSize = 16f
-                    setTypeface(null, android.graphics.Typeface.BOLD)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-            }
-        }
-
-        fun aplicarEstiloNormal() {
-            for (i in 1..6) {
-                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
-                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
-                fecha?.apply {
-                    textSize = 14f
-                    setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-                nombre?.apply {
-                    textSize = 14f
-                    setTypeface(null, android.graphics.Typeface.NORMAL)
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
-                }
-            }
-        }
-
-        aplicarEstiloNormal()
-
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
         }
@@ -469,7 +334,6 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Fecha (Más reciente primero)"
-            aplicarEstiloFecha()
             ocultarMenu()
         }
 
@@ -479,7 +343,6 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Fecha (Más antiguo primero)"
-            aplicarEstiloFecha()
             ocultarMenu()
         }
 
@@ -489,7 +352,6 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.VISIBLE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Nombre (A-Z)"
-            aplicarEstiloNombre()
             ocultarMenu()
         }
 
@@ -499,186 +361,103 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.VISIBLE
             labelFiltroActivo.text = "Ordenado por: Nombre (Z-A)"
-            aplicarEstiloNombre()
             ocultarMenu()
         }
 
-        // Listeners para lista original
-        findViewById<ImageView>(R.id.btnVerDetalle1).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle1).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle2).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle2).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2).setOnClickListener {
-            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle3).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle3).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3).setOnClickListener {
-            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle4).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle4).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4).setOnClickListener {
-            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle5).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle5).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5).setOnClickListener {
-            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle6).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle6).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
 
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6).setOnClickListener {
-            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
-        }
-
-        // Listeners para lista fecha descendente
-        findViewById<ImageView>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle2_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle2_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle3_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle3_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle4_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle4_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_fechaDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
-        }
 
-        // Listeners para lista nombre ascendente
-        findViewById<ImageView>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle2_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle2_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle3_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle3_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle4_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle4_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle5_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle5_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_nombreAsc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
-        }
 
-        // Listeners para lista nombre descendente
-        findViewById<ImageView>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle2_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle2_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle3_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle3_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle4_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle4_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
-        }
 
-        findViewById<ImageView>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
+        findViewById<Button>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
-        }
-        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_nombreDesc).setOnClickListener {
-            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
         }
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
@@ -821,12 +600,11 @@ class MainActivity : AppCompatActivity() {
             turnos.removeAt(index)
             dialog.dismiss()
             Toast.makeText(this, "Turno cancelado", Toast.LENGTH_SHORT).show()
-            mostrarTurnos() // Solo navegar después de confirmar
+            mostrarTurnos()
         }
         
         builder.setNegativeButton("Volver") { dialog, _ ->
             dialog.dismiss()
-            // Se queda en la sala de espera
         }
         
         builder.show()
@@ -839,27 +617,22 @@ class MainActivity : AppCompatActivity() {
             mostrarTurnos()
         }
 
-        // Configurar información del turno
         findViewById<TextView>(R.id.nombreProfesional).text = turno.nombre
         findViewById<TextView>(R.id.especialidadProfesional).text = turno.especialidad
         
-        // Formatear fecha con día de la semana
         val fechaFormateada = "Martes ${turno.fechaHora}"
         findViewById<TextView>(R.id.fechaHoraTurno).text = fechaFormateada
         
         findViewById<TextView>(R.id.descripcionTurno).text = turno.motivo
 
-        // Botón Ingresar a la llamada
         findViewById<Button>(R.id.btnIngresarLlamada).setOnClickListener {
-            mostrarVideollamada(turno)
+            Toast.makeText(this, "Ingresando a videoconsulta...", Toast.LENGTH_SHORT).show()
         }
 
-        // Botón Cancelar consulta - mostrar diálogo de confirmación
         findViewById<Button>(R.id.btnCancelarConsulta).setOnClickListener {
             mostrarDialogoCancelarEnSalaEspera(index, turno)
         }
 
-        // Navigation bar
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
         }
@@ -877,71 +650,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
-    }
-
-    private fun mostrarVideollamada(turno: Turno) {
-        setContentView(R.layout.activity_videollamada)
-
-        // Variables de estado
-        var videoEncendido = true
-        var micEncendido = true
-        var volumenEncendido = true
-
-        // Configurar nombre del doctor
-        findViewById<TextView>(R.id.nombreDoctorVideollamada).text = turno.nombre
-
-        // Botón 1: Prender/Apagar cámara
-        val btnToggleVideo = findViewById<android.widget.ImageButton>(R.id.btnToggleVideo)
-        btnToggleVideo.setOnClickListener {
-            videoEncendido = !videoEncendido
-            if (videoEncendido) {
-                btnToggleVideo.setImageResource(R.drawable.ic_video)
-                mostrarDialogo("Cámara encendida")
-            } else {
-                btnToggleVideo.setImageResource(R.drawable.ic_video_off)
-                mostrarDialogo("Cámara apagada")
-            }
-        }
-
-        // Botón 2: Silenciar llamada
-        val btnToggleVolume = findViewById<android.widget.ImageButton>(R.id.btnToggleVolume)
-        btnToggleVolume.setOnClickListener {
-            volumenEncendido = !volumenEncendido
-            if (volumenEncendido) {
-                btnToggleVolume.setImageResource(R.drawable.ic_volume_up)
-                mostrarDialogo("Llamada con sonido")
-            } else {
-                btnToggleVolume.setImageResource(R.drawable.ic_volume_off)
-                mostrarDialogo("Llamada silenciada")
-            }
-        }
-
-        // Botón 3: Mutear micrófono
-        val btnToggleMic = findViewById<android.widget.ImageButton>(R.id.btnToggleMic)
-        btnToggleMic.setOnClickListener {
-            micEncendido = !micEncendido
-            if (micEncendido) {
-                btnToggleMic.setImageResource(R.drawable.ic_mic)
-                mostrarDialogo("Micrófono activado")
-            } else {
-                btnToggleMic.setImageResource(R.drawable.ic_mic_off)
-                mostrarDialogo("Micrófono silenciado")
-            }
-        }
-
-        // Botón 4: Finalizar llamada
-        findViewById<android.widget.ImageButton>(R.id.btnEndCall).setOnClickListener {
-            mostrarDialogo("Llamada finalizada")
-            mostrarHome()
-        }
-
-        // Botón 5: Dar vuelta cámara (dentro del recuadro del paciente)
-        findViewById<android.widget.ImageButton>(R.id.btnFlipCamera).setOnClickListener {
-            mostrarDialogo("Rotar cámara")
-        }
-    }
-
-    private fun mostrarDialogo(mensaje: String) {
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
 }
