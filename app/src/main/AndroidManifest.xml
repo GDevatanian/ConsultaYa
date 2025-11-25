@@ -31,6 +31,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.ConsultaYa" />
+        <activity
+            android:name=".TurnoConfirmadoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.ConsultaYa" />
     </application>
 
 </manifest>

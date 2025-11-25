@@ -296,8 +296,15 @@ class MainActivity : AppCompatActivity() {
                 fecha = fecha.replace("/2025", "/25").replace("/2026", "/26")
                 val fechaHora = "$fecha, ${horarioSeleccionado}hs"
                 turnos.add(Turno(nombre, especialidad, fechaHora, motivo))
-                Toast.makeText(this, "Turno confirmado", Toast.LENGTH_SHORT).show()
-                mostrarTurnos()
+                
+                // Abrir pantalla de confirmación
+                val intent = Intent(this, TurnoConfirmadoActivity::class.java)
+                intent.putExtra("MEDICO", nombre)
+                intent.putExtra("ESPECIALIDAD", especialidad)
+                intent.putExtra("FECHA_HORA", fechaHora)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                overridePendingTransition(0, 0)
             }
         }
 
