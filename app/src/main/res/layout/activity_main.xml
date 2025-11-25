@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
@@ -55,6 +56,11 @@
                     android:text="Buscar médico"
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_chevron_right_green" />
             </LinearLayout>
 
             <!-- Proximos Turnos -->
@@ -84,6 +90,11 @@
                     android:text="Proximos Turnos"
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_chevron_right_green" />
             </LinearLayout>
 
             <!-- Historial -->
@@ -113,6 +124,11 @@
                     android:text="Historial de consultas"
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_chevron_right_green" />
             </LinearLayout>
 
             <!-- Mis Chats -->
@@ -142,6 +158,11 @@
                     android:text="Mis Chats"
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_chevron_right_green" />
             </LinearLayout>
 
             <!-- Botón de Emergencia -->
@@ -186,12 +207,10 @@
                         android:textColor="#757575" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">"
-                    android:textSize="24sp"
-                    android:textColor="#E53935" />
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_chevron_right_red" />
             </LinearLayout>
 
             <!-- Título Servicios frecuentes -->
@@ -226,12 +245,10 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">"
-                    android:textSize="20sp"
-                    android:textColor="@color/teal_icon" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right_green_light" />
             </LinearLayout>
 
             <!-- Especialidad de ejemplo -->
@@ -256,12 +273,10 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_dark" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">"
-                    android:textSize="20sp"
-                    android:textColor="@color/teal_icon" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right_green_light" />
             </LinearLayout>
 
         </LinearLayout>
