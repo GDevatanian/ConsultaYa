@@ -395,7 +395,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun aplicarEstiloFecha() {
-            for (i in 1..6) {
+            for (i in 1..12) {
                 val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
                 val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
                 fecha?.apply {
@@ -412,7 +412,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun aplicarEstiloNombre() {
-            for (i in 1..6) {
+            for (i in 1..12) {
                 val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
                 val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
                 fecha?.apply {

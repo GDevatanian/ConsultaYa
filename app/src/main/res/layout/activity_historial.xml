@@ -761,6 +761,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -769,6 +770,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -844,6 +846,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -852,6 +855,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -927,6 +931,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha9"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -935,6 +940,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre9"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1010,6 +1016,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha10"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1018,6 +1025,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre10"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1093,6 +1101,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1101,6 +1110,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1176,6 +1186,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/fecha12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
@@ -1184,6 +1195,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/nombre12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="4dp"
