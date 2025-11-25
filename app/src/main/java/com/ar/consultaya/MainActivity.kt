@@ -504,103 +504,181 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Listeners para lista original
-        findViewById<Button>(R.id.btnVerDetalle1).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle1).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle2).setOnClickListener {
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle2).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle3).setOnClickListener {
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2).setOnClickListener {
+            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle3).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle4).setOnClickListener {
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3).setOnClickListener {
+            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle4).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle5).setOnClickListener {
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4).setOnClickListener {
+            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle5).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle6).setOnClickListener {
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5).setOnClickListener {
+            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle6).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6).setOnClickListener {
+            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
         }
 
         // Listeners para lista fecha descendente
-        findViewById<Button>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle2_fechaDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle2_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle3_fechaDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle3_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle4_fechaDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle4_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-
-        findViewById<Button>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
-            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_fechaDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
         }
 
         // Listeners para lista nombre ascendente
-        findViewById<Button>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle2_nombreAsc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle2_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle3_nombreAsc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle3_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle4_nombreAsc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle4_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-
-        findViewById<Button>(R.id.btnVerDetalle5_nombreAsc).setOnClickListener {
-            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle5_nombreAsc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_nombreAsc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
         }
 
         // Listeners para lista nombre descendente
-        findViewById<Button>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta1_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Juan Pérez", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle2_nombreDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle2_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. María García", "Dermatología", "10/10/2024, 14:00hs.", "Control dermatológico de rutina. Se observa mejora en las lesiones previas. Se recomienda continuar con el tratamiento tópico indicado.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta2_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. María García", "Dermatología", "◇ 4.6 (95)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle3_nombreDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle3_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Carlos López", "Cardiología", "05/09/2024, 09:15hs.", "Consulta cardiológica de seguimiento. Electrocardiograma dentro de parámetros normales. Se mantiene tratamiento actual.")
         }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta3_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Carlos López", "Cardiología", "◇ 4.8 (128)")
+        }
 
-        findViewById<Button>(R.id.btnVerDetalle4_nombreDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle4_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Ana Martínez", "Pediatría", "28/08/2024, 16:45hs.", "Control pediátrico de rutina. Niño en buen estado general. Peso y talla dentro de percentiles normales.")
         }
-
-        findViewById<Button>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
-            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta4_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Ana Martínez", "Pediatría", "◇ 4.9 (203)")
         }
 
-        findViewById<Button>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
+        findViewById<ImageView>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
+            mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta5_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dr. Roberto Sánchez", "Oftalmología", "◇ 4.7 (156)")
+        }
+
+        findViewById<ImageView>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
+        }
+        findViewById<TextView>(R.id.btnSolicitarVideoconsulta6_nombreDesc).setOnClickListener {
+            mostrarAgendarTurno("Dra. Laura Fernández", "Ginecología", "◇ 4.9 (189)")
         }
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
