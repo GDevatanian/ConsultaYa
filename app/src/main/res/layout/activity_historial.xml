@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
@@ -218,59 +219,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/11/2024, 10:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre1"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Juan Pérez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta general de rutina"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/11/2024, 10:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Juan Pérez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta general de rutina"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle1"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle1"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 2 -->
@@ -280,59 +304,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="10/10/2024, 14:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre2"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. María García"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Control dermatológico"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="10/10/2024, 14:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. María García"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Control dermatológico"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle2"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle2"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 3 -->
@@ -342,59 +389,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="05/09/2024, 09:15hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre3"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Carlos López"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta cardiológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="05/09/2024, 09:15hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Carlos López"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta cardiológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle3"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle3"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 4 -->
@@ -404,59 +474,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="28/08/2024, 16:45hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre4"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Ana Martínez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta pediátrica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="28/08/2024, 16:45hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Ana Martínez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta pediátrica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle4"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle4"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 5 -->
@@ -466,59 +559,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/08/2024, 11:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre5"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Roberto Sánchez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta oftalmológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/08/2024, 11:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Roberto Sánchez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta oftalmológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle5"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle5"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 6 -->
@@ -528,59 +644,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/fecha6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="01/08/2024, 13:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:id="@+id/nombre6"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Laura Fernández"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta ginecológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="01/08/2024, 13:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Laura Fernández"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta ginecológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle6"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle6"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -600,57 +739,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="01/08/2024, 13:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Laura Fernández"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta ginecológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="01/08/2024, 13:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Laura Fernández"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta ginecológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle6_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle6_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta6_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 5 (15/08/2024) -->
@@ -660,57 +824,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/08/2024, 11:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Roberto Sánchez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta oftalmológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/08/2024, 11:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Roberto Sánchez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta oftalmológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle5_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle5_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta5_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 4 (28/08/2024) -->
@@ -720,57 +909,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="28/08/2024, 16:45hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Ana Martínez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta pediátrica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="28/08/2024, 16:45hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Ana Martínez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta pediátrica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle4_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle4_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta4_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 3 (05/09/2024) -->
@@ -780,57 +994,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="05/09/2024, 09:15hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Carlos López"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta cardiológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="05/09/2024, 09:15hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Carlos López"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta cardiológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle3_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle3_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta3_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 2 (10/10/2024) -->
@@ -840,57 +1079,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="10/10/2024, 14:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. María García"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Control dermatológico"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="10/10/2024, 14:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. María García"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Control dermatológico"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle2_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle2_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta2_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Consulta 1 (15/11/2024) -->
@@ -900,57 +1164,82 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/11/2024, 10:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Juan Pérez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta general de rutina"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/fecha12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/11/2024, 10:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Juan Pérez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta general de rutina"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle1_fechaDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle1_fechaDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta1_fechaDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -970,57 +1259,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="28/08/2024, 16:45hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Ana Martínez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta pediátrica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="28/08/2024, 16:45hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Ana Martínez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta pediátrica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle4_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle4_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta4_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dr. Carlos López -->
@@ -1030,57 +1342,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="05/09/2024, 09:15hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Carlos López"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta cardiológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="05/09/2024, 09:15hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Carlos López"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta cardiológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle3_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle3_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta3_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dra. Laura Fernández -->
@@ -1090,57 +1425,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="01/08/2024, 13:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Laura Fernández"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta ginecológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="01/08/2024, 13:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Laura Fernández"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta ginecológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle6_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle6_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta6_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dra. María García -->
@@ -1150,57 +1508,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="10/10/2024, 14:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. María García"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Control dermatológico"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="10/10/2024, 14:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. María García"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Control dermatológico"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle2_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle2_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta2_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dr. Juan Pérez -->
@@ -1210,57 +1591,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/11/2024, 10:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Juan Pérez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta general de rutina"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/11/2024, 10:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Juan Pérez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta general de rutina"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle1_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle1_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta1_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dr. Roberto Sánchez -->
@@ -1270,57 +1674,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/08/2024, 11:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Roberto Sánchez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta oftalmológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/08/2024, 11:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Roberto Sánchez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta oftalmológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle5_nombreAsc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle5_nombreAsc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta5_nombreAsc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -1340,57 +1767,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/08/2024, 11:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Roberto Sánchez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta oftalmológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/08/2024, 11:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Roberto Sánchez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta oftalmológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle5_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle5_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta5_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dr. Juan Pérez -->
@@ -1400,57 +1850,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="15/11/2024, 10:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Juan Pérez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta general de rutina"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="15/11/2024, 10:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Juan Pérez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta general de rutina"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle1_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle1_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta1_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dra. María García -->
@@ -1460,57 +1933,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="10/10/2024, 14:00hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. María García"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Control dermatológico"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="10/10/2024, 14:00hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. María García"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Control dermatológico"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle2_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle2_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta2_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dra. Laura Fernández -->
@@ -1520,57 +2016,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="01/08/2024, 13:30hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Laura Fernández"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta ginecológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="01/08/2024, 13:30hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Laura Fernández"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta ginecológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle6_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle6_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta6_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dr. Carlos López -->
@@ -1580,57 +2099,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="05/09/2024, 09:15hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dr. Carlos López"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta cardiológica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="05/09/2024, 09:15hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dr. Carlos López"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta cardiológica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle3_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle3_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta3_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
                 <!-- Dra. Ana Martínez -->
@@ -1640,57 +2182,80 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/diamond_shape"
-                        android:layout_marginRight="16dp" />
-
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="28/08/2024, 16:45hs."
-                            android:textColor="@color/text_gray"
-                            android:textSize="12sp" />
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/diamond_shape"
+                            android:layout_marginRight="16dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:text="Dra. Ana Martínez"
-                            android:textColor="@color/text_dark"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Consulta pediátrica"
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="28/08/2024, 16:45hs."
+                                android:textColor="@color/text_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Dra. Ana Martínez"
+                                android:textColor="@color/text_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consulta pediátrica"
+                                android:textColor="@color/text_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnVerDetalle4_nombreDesc"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_chevron_right"
+                            android:background="@android:color/transparent"
+                            android:padding="8dp"
+                            android:minHeight="50dp"
+                            android:scaleType="centerInside"
+                            android:layout_marginStart="12dp"
+                            app:tint="@color/text_gray"/>
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnVerDetalle4_nombreDesc"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9E9E9E"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/btnSolicitarVideoconsulta4_nombreDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
-                        android:text="Ver detalle"
+                        android:text="Solicitar otra videoconsulta"
+                        android:textSize="14sp"
                         android:textColor="@color/teal_icon"
-                        android:textSize="12sp"
-                        android:layout_marginLeft="12dp" />
+                        android:layout_gravity="center_horizontal" />
                 </LinearLayout>
 
             </LinearLayout>
