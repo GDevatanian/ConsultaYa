@@ -121,6 +121,7 @@
                 android:layout_marginBottom="12dp" />
 
             <LinearLayout
+                android:id="@+id/btnSeleccionarFecha"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="24dp"
@@ -128,21 +129,29 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                android:clickable="true"
+                android:focusable="true">
 
-                <TextView
+                <EditText
                     android:id="@+id/txtFecha"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="10/11/2025"
+                    android:hint="Elegir fecha para videoconsulta"
                     android:textSize="14sp"
-                    android:textColor="@color/text_dark" />
+                    android:textColor="@color/text_dark"
+                    android:textColorHint="@color/text_gray"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:inputType="none" />
 
-                <View
+                <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="@drawable/diamond_shape" />
+                    android:src="@drawable/ic_calendar"
+                    app:tint="@color/teal_icon" />
             </LinearLayout>
 
             <!-- Horarios disponibles -->

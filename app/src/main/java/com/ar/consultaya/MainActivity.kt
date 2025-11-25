@@ -247,6 +247,25 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.ratingMedicoElegido).text = rating
         findViewById<ImageView>(R.id.imagenMedicoElegido).setImageResource(obtenerFotoDoctor(nombre))
 
+        // DatePicker para seleccionar fecha
+        val txtFecha = findViewById<EditText>(R.id.txtFecha)
+        findViewById<LinearLayout>(R.id.btnSeleccionarFecha).setOnClickListener {
+            val calendar = java.util.Calendar.getInstance()
+            val datePickerDialog = android.app.DatePickerDialog(
+                this,
+                { _, year, month, dayOfMonth ->
+                    val fechaSeleccionada = String.format("%02d/%02d/%d", dayOfMonth, month + 1, year)
+                    txtFecha.setText(fechaSeleccionada)
+                },
+                calendar.get(java.util.Calendar.YEAR),
+                calendar.get(java.util.Calendar.MONTH),
+                calendar.get(java.util.Calendar.DAY_OF_MONTH)
+            )
+            // Deshabilitar fechas anteriores a hoy
+            datePickerDialog.datePicker.minDate = calendar.timeInMillis
+            datePickerDialog.show()
+        }
+
         val horarios = listOf(
             R.id.btnHora1, R.id.btnHora2, R.id.btnHora3, R.id.btnHora4, R.id.btnHora5,
             R.id.btnHora6, R.id.btnHora7, R.id.btnHora8, R.id.btnHora9, R.id.btnHora10
@@ -266,10 +285,14 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnConfirmarTurno).setOnClickListener {
             val motivo = findViewById<EditText>(R.id.editMotivo).text.toString()
-            if (horarioSeleccionado == null) {
+            val txtFecha = findViewById<EditText>(R.id.txtFecha)
+            
+            if (txtFecha.text.isEmpty()) {
+                Toast.makeText(this, "Seleccione una fecha", Toast.LENGTH_SHORT).show()
+            } else if (horarioSeleccionado == null) {
                 Toast.makeText(this, "Seleccione un horario", Toast.LENGTH_SHORT).show()
             } else {
-                var fecha = findViewById<TextView>(R.id.txtFecha).text.toString()
+                var fecha = txtFecha.text.toString()
                 fecha = fecha.replace("/2025", "/25").replace("/2026", "/26")
                 val fechaHora = "$fecha, ${horarioSeleccionado}hs"
                 turnos.add(Turno(nombre, especialidad, fechaHora, motivo))
@@ -390,10 +413,6 @@ class MainActivity : AppCompatActivity() {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
 
-        findViewById<ImageView>(R.id.btnVerDetalle6).setOnClickListener {
-            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
-        }
-
         findViewById<ImageView>(R.id.btnVerDetalle1_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
@@ -412,10 +431,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.btnVerDetalle5_fechaDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle6_fechaDesc).setOnClickListener {
-            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
 
         findViewById<ImageView>(R.id.btnVerDetalle1_nombreAsc).setOnClickListener {
@@ -438,10 +453,6 @@ class MainActivity : AppCompatActivity() {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
 
-        findViewById<ImageView>(R.id.btnVerDetalle6_nombreAsc).setOnClickListener {
-            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
-        }
-
         findViewById<ImageView>(R.id.btnVerDetalle1_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Juan Pérez", "Cardiología", "15/11/2024, 10:30hs.", "El paciente presenta síntomas de fatiga y dolor en el pecho. Se recomienda realizar estudios complementarios y seguimiento en 30 días. Presión arterial: 130/85. Frecuencia cardíaca: 72 bpm.")
         }
@@ -460,10 +471,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.btnVerDetalle5_nombreDesc).setOnClickListener {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
-        }
-
-        findViewById<ImageView>(R.id.btnVerDetalle6_nombreDesc).setOnClickListener {
-            mostrarDetalleConsulta("Dra. Laura Fernández", "Ginecología", "01/08/2024, 13:30hs.", "Control ginecológico anual. Examen físico normal. Se programaron estudios complementarios.")
         }
 
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {

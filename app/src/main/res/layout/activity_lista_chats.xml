@@ -66,8 +66,8 @@
                     android:padding="16dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginRight="16dp"
                         app:civ_border_width="1dp"
                         app:civ_border_color="@color/teal_border"
@@ -92,7 +92,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -144,7 +144,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -196,7 +196,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -248,7 +248,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -300,7 +300,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -352,7 +352,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Conversación"
+                            android:text="Último mensaje..."
                             android:textColor="@color/text_gray"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -371,6 +371,13 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <!-- Divider Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9E9E9E"
+        android:layout_above="@id/bottomNav" />
 
     <!-- Bottom Navigation -->
     <LinearLayout
