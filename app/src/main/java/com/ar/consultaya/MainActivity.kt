@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         val menuFiltros = findViewById<LinearLayout>(R.id.menuFiltros)
         val overlayFiltros = findViewById<View>(R.id.overlayFiltros)
         val labelFiltroActivo = findViewById<TextView>(R.id.labelFiltroActivo)
-        val btnFiltro = findViewById<TextView>(R.id.btnFiltro)
+        val btnMenu = findViewById<TextView>(R.id.btnMenu)
         val btnBack = findViewById<ImageView>(R.id.btnBack)
 
         fun ocultarMenu() {
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             mostrarHome()
         }
 
-        btnFiltro.setOnClickListener {
+        btnMenu.setOnClickListener {
             if (menuFiltros.visibility == View.VISIBLE) {
                 ocultarMenu()
             } else {

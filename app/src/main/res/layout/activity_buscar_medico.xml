@@ -177,12 +177,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pepe_pepito" />
@@ -236,12 +236,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/juan_perez" />
@@ -296,12 +296,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pepa_pepita" />
@@ -362,12 +362,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pepa_pepita" />
@@ -420,12 +420,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/juan_perez" />
@@ -478,12 +478,12 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:clipToOutline="true"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/teal_border"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pepe_pepito" />
@@ -546,6 +546,95 @@
         android:elevation="8dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape_gray"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navBuscar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:textSize="12sp"
+                android:textColor="@color/teal_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navTurnos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape_gray"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turnos"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/diamond_shape_gray"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

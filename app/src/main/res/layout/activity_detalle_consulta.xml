@@ -56,15 +56,14 @@
                 android:orientation="horizontal"
                 android:padding="20dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imagenDoctorDetalle"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/avatar_circle_background"
-                    android:scaleType="centerCrop"
-                    android:clipToOutline="true"
                     android:src="@drawable/juan_perez"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/teal_border"
                     android:contentDescription="@null" />
 
                 <LinearLayout
