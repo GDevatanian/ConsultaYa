@@ -115,19 +115,26 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
-            <View
+            <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginRight="12dp"
-                android:background="?android:attr/actionModeWebSearchDrawable" />
+                android:src="@drawable/ic_search"
+                app:tint="@color/text_gray" />
 
-            <TextView
+            <EditText
+                android:id="@+id/editBuscar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Buscar especialidad o nombre"
-                android:textColor="@color/text_gray"
-                android:textSize="14sp" />
+                android:hint="Buscar especialidad o nombre"
+                android:textColorHint="@color/text_gray"
+                android:textColor="@color/text_dark"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:maxLines="1" />
 
             <TextView
                 android:id="@+id/btnMenu"
@@ -161,6 +168,42 @@
                 android:textColor="@color/text_gray"
                 android:textSize="12sp" />
 
+            <!-- Mensaje sin resultados -->
+            <LinearLayout
+                android:id="@+id/sinResultados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="40dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/text_gray"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No se encontraron resultados"
+                    android:textColor="@color/text_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/txtSinResultados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intenta buscar con otro nombre o especialidad"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/listaMedicosEspecialidad"
                 android:layout_width="match_parent"
@@ -169,6 +212,7 @@
                 android:visibility="visible">
 
                 <LinearLayout
+                    android:id="@+id/cardMedico1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -228,6 +272,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cardMedico2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -288,6 +333,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cardMedico3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"

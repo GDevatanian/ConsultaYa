@@ -93,6 +93,62 @@ class MainActivity : AppCompatActivity() {
         val labelFiltroActivo = findViewById<TextView>(R.id.labelFiltroActivo)
         val btnMenu = findViewById<TextView>(R.id.btnMenu)
         val btnBack = findViewById<ImageView>(R.id.btnBack)
+        val editBuscar = findViewById<EditText>(R.id.editBuscar)
+        val sinResultados = findViewById<LinearLayout>(R.id.sinResultados)
+
+        // Cards de médicos
+        val cardMedico1 = findViewById<LinearLayout>(R.id.cardMedico1) // Pepe Pepito - Cardiologia
+        val cardMedico2 = findViewById<LinearLayout>(R.id.cardMedico2) // Juan Perez - Clinico
+        val cardMedico3 = findViewById<LinearLayout>(R.id.cardMedico3) // Pepa Pepita - Dermatologia
+
+        // Datos de médicos para filtrar
+        data class Medico(val nombre: String, val especialidad: String, val card: LinearLayout)
+        val medicos = listOf(
+            Medico("Dr. Pepe Pepito", "Cardiologia", cardMedico1),
+            Medico("Dr. Juan Perez", "Clinico", cardMedico2),
+            Medico("Dra. Pepa Pepita", "Dermatologia", cardMedico3)
+        )
+
+        // Función para filtrar médicos
+        fun filtrarMedicos(query: String) {
+            val queryLower = query.lowercase().trim()
+            var hayResultados = false
+
+            if (queryLower.isEmpty()) {
+                // Mostrar todos
+                medicos.forEach { it.card.visibility = View.VISIBLE }
+                sinResultados.visibility = View.GONE
+                listaEspecialidad.visibility = View.VISIBLE
+                listaNombreAsc.visibility = View.GONE
+            } else {
+                // Filtrar por nombre o especialidad
+                medicos.forEach { medico ->
+                    val coincide = medico.nombre.lowercase().contains(queryLower) ||
+                            medico.especialidad.lowercase().contains(queryLower)
+                    medico.card.visibility = if (coincide) View.VISIBLE else View.GONE
+                    if (coincide) hayResultados = true
+                }
+
+                // Mostrar/ocultar mensaje sin resultados
+                if (hayResultados) {
+                    sinResultados.visibility = View.GONE
+                    listaEspecialidad.visibility = View.VISIBLE
+                } else {
+                    sinResultados.visibility = View.VISIBLE
+                    listaEspecialidad.visibility = View.GONE
+                    listaNombreAsc.visibility = View.GONE
+                }
+            }
+        }
+
+        // Listener para el EditText de búsqueda
+        editBuscar.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                filtrarMedicos(s.toString())
+            }
+        })
 
         fun ocultarMenu() {
             menuFiltros.visibility = View.GONE
@@ -121,15 +177,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.btnFiltroEspecialidad).setOnClickListener {
+            editBuscar.setText("")
             listaEspecialidad.visibility = View.VISIBLE
             listaNombreAsc.visibility = View.GONE
+            sinResultados.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Especialidad"
             ocultarMenu()
         }
 
         findViewById<LinearLayout>(R.id.btnFiltroNombreAsc).setOnClickListener {
+            editBuscar.setText("")
             listaEspecialidad.visibility = View.GONE
             listaNombreAsc.visibility = View.VISIBLE
+            sinResultados.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Nombre (A-Z)"
             ocultarMenu()
         }
