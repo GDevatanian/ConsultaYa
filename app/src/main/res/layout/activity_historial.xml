@@ -354,7 +354,7 @@
 
                         <ImageView
                             android:id="@+id/btnVerDetalle2"
-                            android:layout_width="match_parent"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_chevron_right"
                             android:background="@android:color/transparent"
@@ -439,7 +439,7 @@
 
                         <ImageView
                             android:id="@+id/btnVerDetalle3"
-                            android:layout_width="match_parent"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_chevron_right"
                             android:background="@android:color/transparent"
@@ -524,7 +524,7 @@
 
                         <ImageView
                             android:id="@+id/btnVerDetalle4"
-                            android:layout_width="match_parent"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_chevron_right"
                             android:background="@android:color/transparent"
@@ -609,7 +609,7 @@
 
                         <ImageView
                             android:id="@+id/btnVerDetalle5"
-                            android:layout_width="match_parent"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_chevron_right"
                             android:background="@android:color/transparent"
@@ -694,7 +694,7 @@
 
                         <ImageView
                             android:id="@+id/btnVerDetalle6"
-                            android:layout_width="match_parent"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_chevron_right"
                             android:background="@android:color/transparent"
