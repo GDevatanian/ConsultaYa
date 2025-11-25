@@ -394,6 +394,59 @@ class MainActivity : AppCompatActivity() {
             overlayFiltros.visibility = View.VISIBLE
         }
 
+        fun aplicarEstiloFecha() {
+            for (i in 1..6) {
+                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
+                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
+                fecha?.apply {
+                    textSize = 16f
+                    setTypeface(null, android.graphics.Typeface.BOLD)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+                nombre?.apply {
+                    textSize = 14f
+                    setTypeface(null, android.graphics.Typeface.NORMAL)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+            }
+        }
+
+        fun aplicarEstiloNombre() {
+            for (i in 1..6) {
+                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
+                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
+                fecha?.apply {
+                    textSize = 14f
+                    setTypeface(null, android.graphics.Typeface.NORMAL)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+                nombre?.apply {
+                    textSize = 16f
+                    setTypeface(null, android.graphics.Typeface.BOLD)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+            }
+        }
+
+        fun aplicarEstiloNormal() {
+            for (i in 1..6) {
+                val fecha = findViewById<TextView>(resources.getIdentifier("fecha$i", "id", packageName))
+                val nombre = findViewById<TextView>(resources.getIdentifier("nombre$i", "id", packageName))
+                fecha?.apply {
+                    textSize = 14f
+                    setTypeface(null, android.graphics.Typeface.NORMAL)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+                nombre?.apply {
+                    textSize = 14f
+                    setTypeface(null, android.graphics.Typeface.NORMAL)
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_dark))
+                }
+            }
+        }
+
+        aplicarEstiloNormal()
+
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             mostrarHome()
         }
@@ -416,6 +469,7 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Fecha (Más reciente primero)"
+            aplicarEstiloFecha()
             ocultarMenu()
         }
 
@@ -425,6 +479,7 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Fecha (Más antiguo primero)"
+            aplicarEstiloFecha()
             ocultarMenu()
         }
 
@@ -434,6 +489,7 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.VISIBLE
             listaNombreDesc.visibility = View.GONE
             labelFiltroActivo.text = "Ordenado por: Nombre (A-Z)"
+            aplicarEstiloNombre()
             ocultarMenu()
         }
 
@@ -443,6 +499,7 @@ class MainActivity : AppCompatActivity() {
             listaNombreAsc.visibility = View.GONE
             listaNombreDesc.visibility = View.VISIBLE
             labelFiltroActivo.text = "Ordenado por: Nombre (Z-A)"
+            aplicarEstiloNombre()
             ocultarMenu()
         }
 

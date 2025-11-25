@@ -235,6 +235,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -243,6 +244,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -295,6 +297,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -303,6 +306,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -355,6 +359,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -363,6 +368,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -415,6 +421,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -423,6 +430,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -475,6 +483,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -483,6 +492,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -535,6 +545,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/fecha6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -543,6 +554,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/nombre6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
