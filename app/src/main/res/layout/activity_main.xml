@@ -122,7 +122,7 @@
                 android:layout_height="70dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/rounded_button"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
@@ -144,6 +144,56 @@
                     android:textColor="@color/text_dark" />
             </LinearLayout>
 
+            <!-- Botón de Emergencia -->
+            <LinearLayout
+                android:id="@+id/btnEmergencia"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button_emergency"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/diamond_shape_red"
+                    android:layout_marginRight="16dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consulta de Emergencia"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#E53935" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Videollamada urgente 24/7"
+                        android:textSize="12sp"
+                        android:textColor="#757575" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textSize="24sp"
+                    android:textColor="#E53935" />
+            </LinearLayout>
+
             <!-- Título Servicios frecuentes -->
             <TextView
                 android:layout_width="wrap_content"
@@ -162,7 +212,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_thin"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
@@ -192,7 +242,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_thin"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"

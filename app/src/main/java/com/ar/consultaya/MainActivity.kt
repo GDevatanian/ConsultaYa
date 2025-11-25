@@ -60,6 +60,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Especialidad", Toast.LENGTH_SHORT).show()
         }
 
+        findViewById<android.view.View>(R.id.btnEmergencia).setOnClickListener {
+            mostrarEmergenciaConfirmar()
+        }
+
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
             mostrarHome()
         }
@@ -185,7 +189,7 @@ class MainActivity : AppCompatActivity() {
             card.findViewById<TextView>(R.id.especialidadMedico).text = turno.especialidad
             card.findViewById<TextView>(R.id.fechaHora).text = turno.fechaHora
             card.findViewById<ImageView>(R.id.imagenMedico).setImageResource(obtenerFotoDoctor(turno.nombre))
-            
+
             card.setOnClickListener {
                 mostrarSalaEspera(turno, index)
             }
@@ -624,14 +628,14 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.nombreProfesional).text = turno.nombre
         findViewById<TextView>(R.id.especialidadProfesional).text = turno.especialidad
         findViewById<ImageView>(R.id.imagenProfesional).setImageResource(obtenerFotoDoctor(turno.nombre))
-        
+
         val fechaFormateada = "Martes ${turno.fechaHora}"
         findViewById<TextView>(R.id.fechaHoraTurno).text = fechaFormateada
         
         findViewById<TextView>(R.id.descripcionTurno).text = turno.motivo
 
         findViewById<Button>(R.id.btnIngresarLlamada).setOnClickListener {
-            Toast.makeText(this, "Ingresando a videoconsulta...", Toast.LENGTH_SHORT).show()
+            mostrarVideollamadaNormal(turno)
         }
 
         findViewById<Button>(R.id.btnCancelarConsulta).setOnClickListener {
@@ -668,6 +672,105 @@ class MainActivity : AppCompatActivity() {
             "Dr. Roberto Sánchez", "Dr. Roberto Sanchez" -> R.drawable.roberto_sanchez
             "Dra. Laura Fernández", "Dra. Laura Fernandez" -> R.drawable.laura_fernandez
             else -> R.drawable.doc
+        }
+    }
+
+    private fun mostrarDialogo(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun mostrarEmergenciaConfirmar() {
+        setContentView(R.layout.activity_emergencia_confirmar)
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            mostrarHome()
+        }
+
+        findViewById<TextView>(R.id.btnConectar).setOnClickListener {
+            mostrarEmergenciaConectando()
+        }
+
+        findViewById<TextView>(R.id.btnCancelar).setOnClickListener {
+            mostrarHome()
+        }
+    }
+
+    private fun mostrarEmergenciaConectando() {
+        setContentView(R.layout.activity_emergencia_conectando)
+
+        findViewById<TextView>(R.id.btnCancelarConexion).setOnClickListener {
+            mostrarHome()
+        }
+
+        // Simular conexión después de 5 segundos
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            mostrarVideollamadaEmergencia()
+        }, 5000)
+    }
+
+    private fun mostrarVideollamadaEmergencia() {
+        mostrarVideollamadaNormal(Turno("Dr. Guardia", "Emergencias", "Ahora", "Consulta de emergencia"))
+    }
+
+    private fun mostrarVideollamadaNormal(turno: Turno) {
+        setContentView(R.layout.activity_videollamada)
+
+        // Variables de estado
+        var videoEncendido = true
+        var micEncendido = true
+        var volumenEncendido = true
+
+        // Configurar nombre del doctor
+        findViewById<TextView>(R.id.nombreDoctorVideollamada).text = turno.nombre
+
+        // Botón 1: Prender/Apagar cámara
+        val btnToggleVideo = findViewById<android.widget.ImageButton>(R.id.btnToggleVideo)
+        btnToggleVideo.setOnClickListener {
+            videoEncendido = !videoEncendido
+            if (videoEncendido) {
+                btnToggleVideo.setImageResource(R.drawable.ic_video)
+                Toast.makeText(this, "Cámara encendida", Toast.LENGTH_SHORT).show()
+            } else {
+                btnToggleVideo.setImageResource(R.drawable.ic_video_off)
+                Toast.makeText(this, "Cámara apagada", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Botón 2: Silenciar llamada
+        val btnToggleVolume = findViewById<android.widget.ImageButton>(R.id.btnToggleVolume)
+        btnToggleVolume.setOnClickListener {
+            volumenEncendido = !volumenEncendido
+            if (volumenEncendido) {
+                btnToggleVolume.setImageResource(R.drawable.ic_volume_up)
+                Toast.makeText(this, "Llamada con sonido", Toast.LENGTH_SHORT).show()
+            } else {
+                btnToggleVolume.setImageResource(R.drawable.ic_volume_off)
+                Toast.makeText(this, "Llamada silenciada", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Botón 3: Mutear micrófono
+        val btnToggleMic = findViewById<android.widget.ImageButton>(R.id.btnToggleMic)
+        btnToggleMic.setOnClickListener {
+            micEncendido = !micEncendido
+            if (micEncendido) {
+                btnToggleMic.setImageResource(R.drawable.ic_mic)
+                Toast.makeText(this, "Micrófono activado", Toast.LENGTH_SHORT).show()
+            } else {
+                btnToggleMic.setImageResource(R.drawable.ic_mic_off)
+                Toast.makeText(this, "Micrófono silenciado", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Botón 4: Finalizar llamada
+        findViewById<android.widget.ImageButton>(R.id.btnEndCall).setOnClickListener {
+            Toast.makeText(this, "Llamada finalizada", Toast.LENGTH_SHORT).show()
+            mostrarHome()
+        }
+
+        // Botón 5: Dar vuelta cámara (dentro del recuadro del paciente)
+        findViewById<android.widget.ImageButton>(R.id.btnFlipCamera).setOnClickListener {
+            Toast.makeText(this, "Rotar cámara", Toast.LENGTH_SHORT).show()
         }
     }
 }
