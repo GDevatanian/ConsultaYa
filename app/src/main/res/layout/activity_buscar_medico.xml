@@ -64,6 +64,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -80,10 +81,70 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/headerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/teal_icon"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingTop="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp">
+
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#424242" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_field"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="12dp"
+                android:background="?android:attr/actionModeWebSearchDrawable" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Buscar especialidad o nombre"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="center"
+                android:text="☰"
+                android:textColor="@color/text_dark"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNav">
+        android:layout_above="@id/bottomNav"
+        android:layout_below="@id/headerSearch">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,54 +152,14 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-                <ImageView
-                    android:id="@+id/btnBack"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_arrow_back"
-                    android:padding="4dp"
-                    app:tint="@color/text_dark"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Buscar médico"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_dark"
-                    android:layout_centerInParent="true"/>
-                <TextView
-                    android:id="@+id/btnFiltro"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentEnd="true"
-                    android:text="☰"
-                    android:textSize="20sp"
-                    android:textColor="@color/text_dark"
-                    android:gravity="center"/>
-            </RelativeLayout>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Buscar por especialidad, nombre o ubicación"
-                android:background="@drawable/search_background"
-                android:padding="12dp"
-                android:drawableStart="@drawable/ic_search"
-                android:drawablePadding="8dp"
-                android:layout_marginBottom="16dp"/>
-
             <TextView
                 android:id="@+id/labelFiltroActivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:text="Ordenado por: Especialidad"
-                android:textSize="12sp"
                 android:textColor="@color/text_gray"
-                android:layout_marginBottom="12dp"/>
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:id="@+id/listaMedicosEspecialidad"
@@ -146,152 +167,182 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="visible">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/pepe_pepito"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pepe_pepito" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dr. Pepe Pepito"/>
+                            android:text="Dr. Pepe Pepito"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Cardiologia"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Cardiologia"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.8 (128)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.8 (128)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/juan_perez"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/juan_perez" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dr. Juan Perez"/>
+                            android:text="Dr. Juan Perez"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Clinico"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Clinico"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.9 (203)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.9 (203)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/pepa_pepita"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pepa_pepita" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dra. Pepa Pepita"/>
+                            android:text="Dra. Pepa Pepita"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Dermatologia"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Dermatologia"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.6 (95)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.6 (95)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -301,152 +352,179 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/pepa_pepita"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pepa_pepita" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dra. Pepa Pepita"/>
+                            android:text="Dra. Pepa Pepita"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Dermatologia"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Dermatologia"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.6 (95)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.6 (95)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar2_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/juan_perez"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/juan_perez" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dr. Juan Perez"/>
+                            android:text="Dr. Juan Perez"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Clinico"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Clinico"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.9 (203)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.9 (203)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar3_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_button"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
                         android:clipToOutline="true"
-                        android:src="@drawable/pepe_pepito"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pepe_pepito" />
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:text="Dr. Pepe Pepito"/>
+                            android:text="Dr. Pepe Pepito"
+                            android:textColor="@color/text_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Cardiologia"
                             android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            android:text="Cardiologia"/>
+                            android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="◇ 4.8 (128)"
                             android:textColor="@color/text_gray"
-                            android:textSize="12sp"
-                            android:text="◇ 4.8 (128)"/>
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <Button
                         android:id="@+id/btnAgendar1_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Agendar"/>
+                        android:background="@drawable/button_agendar"
+                        android:text="Agendar"
+                        android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
 
