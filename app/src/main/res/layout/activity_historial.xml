@@ -187,11 +187,8 @@
                     android:layout_height="32dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="☰"
-                    android:textSize="20sp"
-                    android:textColor="@color/text_dark"
+                    android:background="@drawable/ic_filte_slider"
                     android:gravity="center"
-                    android:background="@android:color/transparent"
                     android:padding="4dp" />
             </RelativeLayout>
 
@@ -2190,8 +2187,9 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_home"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -2212,8 +2210,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -2234,8 +2232,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_calendar_clock" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -2256,8 +2254,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"

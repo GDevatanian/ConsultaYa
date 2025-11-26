@@ -46,8 +46,9 @@
         <View
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/diamond_shape_red"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/ic_emergency_call"
+            android:backgroundTint="@color/red_cancel" />
 
         <TextView
             android:layout_width="wrap_content"

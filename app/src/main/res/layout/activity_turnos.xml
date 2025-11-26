@@ -156,8 +156,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -178,8 +178,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -200,8 +200,9 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_calendar_clock"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -222,8 +223,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"

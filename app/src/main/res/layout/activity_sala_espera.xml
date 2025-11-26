@@ -121,9 +121,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📅"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="8dp" />
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_calendar"
+                        android:backgroundTint="@color/teal_icon" />
 
                     <TextView
                         android:id="@+id/fechaHoraTurno"
@@ -145,9 +145,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="⏱️"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="8dp" />
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_clock"
+                        android:backgroundTint="@color/teal_icon"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -185,20 +186,20 @@
                     android:id="@+id/btnIngresarLlamada"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="📹 Ingresar a la llamada"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="12dp"
                     android:background="@drawable/button_green_soft"
-                    android:layout_marginBottom="12dp" />
+                    android:text="Ingresar a la llamada"
+                    android:textColor="@color/text_dark"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btnCancelarConsulta"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="❌ Cancelar consulta"
-                    android:textSize="16sp"
+                    android:background="@drawable/button_red_soft"
+                    android:text="Cancelar consulta"
                     android:textColor="@color/text_dark"
-                    android:background="@drawable/button_red_soft" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -207,13 +208,20 @@
     </ScrollView>
 
     <!-- Navigation Bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottomNav"
+        android:layout_weight="1"
+        android:background="#9E9E9E" />
+
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/white"
         android:orientation="horizontal"
-        android:background="@color/teal_light"
         android:padding="12dp">
 
         <LinearLayout
@@ -221,21 +229,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/diamond_shape" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Home"
-                android:textSize="10sp"
                 android:textColor="@color/text_dark"
-                android:layout_marginTop="4dp" />
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -244,21 +252,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/diamond_shape" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Buscar"
-                android:textSize="10sp"
                 android:textColor="@color/text_dark"
-                android:layout_marginTop="4dp" />
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -267,21 +275,22 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/diamond_shape" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_calendar_clock"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Turnos"
-                android:textSize="10sp"
-                android:textColor="@color/text_dark"
-                android:layout_marginTop="4dp" />
+                android:textColor="@color/teal_icon"
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -290,21 +299,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/diamond_shape" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Perfil"
-                android:textSize="10sp"
                 android:textColor="@color/text_dark"
-                android:layout_marginTop="4dp" />
+                android:textSize="10sp" />
 
         </LinearLayout>
 

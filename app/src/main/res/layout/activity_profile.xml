@@ -57,20 +57,20 @@
 
                 <!-- Avatar -->
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@mipmap/ic_launcher_round"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/profile_placeholder" />
 
                 <!-- Nombre -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Juan Pérez"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"
+                    android:text="Hernán Ramos"
                     android:textColor="@color/text_dark"
-                    android:layout_marginBottom="4dp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <!-- Credencial -->
                 <TextView
@@ -294,8 +294,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -316,8 +316,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -338,8 +338,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_calendar_clock" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -360,8 +360,9 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_profie"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"

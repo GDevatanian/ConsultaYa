@@ -119,8 +119,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/text_gray" />
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="@color/text_dark" />
 
             <EditText
                 android:id="@+id/editBuscar"
@@ -140,10 +140,8 @@
                 android:id="@+id/btnMenu"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:gravity="center"
-                android:text="☰"
-                android:textColor="@color/text_dark"
-                android:textSize="20sp" />
+                android:background="@drawable/ic_filte_slider"
+                android:gravity="center" />
         </LinearLayout>
     </LinearLayout>
 
@@ -604,8 +602,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -626,8 +624,9 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_doctor_search_home"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -648,8 +647,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_calendar_clock" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -670,8 +669,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"

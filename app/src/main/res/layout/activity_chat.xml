@@ -16,19 +16,18 @@
         android:layout_margin="0dp"
         android:layout_marginTop="96dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/white"
+        android:background="@color/teal_icon"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <ImageView
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/btnBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_arrow_back"
             android:padding="4dp"
-            app:tint="@color/text_dark"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/text_dark" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imagenDoctorChat"
@@ -36,10 +35,10 @@
             android:layout_height="40dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="12dp"
+            android:contentDescription="@null"
             android:src="@drawable/juan_perez"
-            app:civ_border_width="1dp"
             app:civ_border_color="@color/teal_border"
-            android:contentDescription="@null" />
+            app:civ_border_width="1dp" />
 
         <TextView
             android:id="@+id/nombreDoctorChat"
@@ -263,15 +262,16 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_home"
+                android:backgroundTint="@color/teal_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
-                android:textSize="12sp"
-                android:textColor="@color/teal_icon" />
+                android:textColor="@color/teal_icon"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -285,8 +285,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -307,8 +307,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_calendar_clock" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -329,8 +329,8 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/diamond_shape_gray"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"
