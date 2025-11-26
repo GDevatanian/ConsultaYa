@@ -46,6 +46,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleIntent(intent: Intent) {
+        // Si viene de TurnoConfirmado, limpiar stack y ir a home
+        if (intent.getBooleanExtra("LIMPIAR_STACK", false)) {
+            navigationStack.clear()
+            pantallaActual = Pantalla.HOME
+            mostrarHome()
+            return
+        }
+        
         val pantallaInicial = intent.getStringExtra("PANTALLA_INICIAL")
         when (pantallaInicial) {
             "BUSCAR" -> navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
@@ -102,6 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarHome() {
+        pantallaActual = Pantalla.HOME
         setContentView(R.layout.activity_main)
 
         findViewById<android.view.View>(R.id.btnBuscarMedico).setOnClickListener {
@@ -153,6 +162,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarBuscarMedico() {
+        pantallaActual = Pantalla.BUSCAR_MEDICO
         setContentView(R.layout.activity_buscar_medico)
 
         val listaEspecialidad = findViewById<LinearLayout>(R.id.listaMedicosEspecialidad)
@@ -304,6 +314,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarTurnos() {
+        pantallaActual = Pantalla.TURNOS
         setContentView(R.layout.activity_turnos)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -366,6 +377,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarAgendarTurno(nombre: String, especialidad: String, rating: String) {
+        // Agregar pantalla actual al stack antes de navegar
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_agendar_turno)
         horarioSeleccionado = null
 
@@ -433,7 +447,6 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("MEDICO", nombre)
                 intent.putExtra("ESPECIALIDAD", especialidad)
                 intent.putExtra("FECHA_HORA", fechaHora)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 overridePendingTransition(0, 0)
             }
@@ -460,6 +473,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarHistorial() {
+        pantallaActual = Pantalla.HISTORIAL
         setContentView(R.layout.activity_historial)
 
         val listaOriginal = findViewById<LinearLayout>(R.id.listaConsultas)
@@ -633,6 +647,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarDetalleConsulta(nombre: String, especialidad: String, fechaHora: String, anotaciones: String) {
+        // Agregar pantalla actual al stack antes de navegar
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_detalle_consulta)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -664,6 +681,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarListaChats() {
+        pantallaActual = Pantalla.CHATS
         setContentView(R.layout.activity_lista_chats)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -715,6 +733,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarChat(nombreDoctor: String) {
+        // Agregar pantalla actual al stack antes de navegar
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_chat)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -771,6 +792,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarSalaEspera(turno: Turno, index: Int) {
+        // Agregar pantalla actual al stack antes de navegar
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_sala_espera)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -833,6 +857,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarEmergenciaConfirmar() {
+        // Agregar pantalla actual al stack antes de navegar
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_emergencia_confirmar)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
@@ -849,6 +876,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarEmergenciaConectando() {
+        // Agregar al stack para poder volver
+        navigationStack.add(pantallaActual)
+        
         setContentView(R.layout.activity_emergencia_conectando)
 
         findViewById<TextView>(R.id.btnCancelarConexion).setOnClickListener {
@@ -862,10 +892,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mostrarVideollamadaEmergencia() {
-        mostrarVideollamadaNormal(Turno("Dr. Guardia", "Emergencias", "Ahora", "Consulta de emergencia"))
+        // Limpiar stack para videollamada de emergencia (no queremos volver a "conectando")
+        navigationStack.clear()
+        navigationStack.add(Pantalla.HOME)
+        mostrarVideollamadaNormal(Turno("Dr. Guardia", "Emergencias", "Ahora", "Consulta de emergencia"), esEmergencia = true)
     }
 
-    private fun mostrarVideollamadaNormal(turno: Turno) {
+    private fun mostrarVideollamadaNormal(turno: Turno, esEmergencia: Boolean = false) {
+        // Solo agregar al stack si no es emergencia (emergencia ya maneja su propio stack)
+        if (!esEmergencia) {
+            navigationStack.add(pantallaActual)
+        }
+        
         setContentView(R.layout.activity_videollamada)
 
         // Variables de estado
@@ -918,7 +956,7 @@ class MainActivity : AppCompatActivity() {
         // Botón 4: Finalizar llamada
         findViewById<android.widget.ImageButton>(R.id.btnEndCall).setOnClickListener {
             Toast.makeText(this, "Llamada finalizada", Toast.LENGTH_SHORT).show()
-            navegarDesdeNavbar(Pantalla.HOME)
+            volverAtras()
         }
 
         // Botón 5: Dar vuelta cámara (dentro del recuadro del paciente)

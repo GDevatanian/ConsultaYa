@@ -43,13 +43,16 @@ class TurnoConfirmadoActivity : AppCompatActivity() {
 
     private fun irAHome() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        intent.putExtra("LIMPIAR_STACK", true)
         startActivity(intent)
         overridePendingTransition(0, 0)
         finish()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
+        super.onBackPressed()
         irAHome()
     }
 

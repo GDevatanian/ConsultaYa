@@ -67,17 +67,24 @@
                     android:gravity="center_vertical"
                     android:layout_marginBottom="24dp">
 
-                    <!-- Foto de perfil -->
-                    <ImageView
-                        android:id="@+id/imagenProfesional"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                    <!-- Foto de perfil con borde verde -->
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/avatar_circle_background"
-                        android:scaleType="centerCrop"
-                        android:clipToOutline="true"
-                        android:src="@drawable/pepe_pepito"
-                        android:contentDescription="@null" />
+                        android:background="@drawable/avatar_circle_border"
+                        android:padding="2dp">
+
+                        <ImageView
+                            android:id="@+id/imagenProfesional"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/avatar_circle_background"
+                            android:scaleType="centerCrop"
+                            android:clipToOutline="true"
+                            android:src="@drawable/pepe_pepito"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
 
                     <!-- Información del profesional -->
                     <LinearLayout
@@ -207,114 +214,114 @@
 
     </ScrollView>
 
-    <!-- Navigation Bar -->
+    <!-- Divider Line -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_above="@id/bottomNav"
-        android:layout_weight="1"
-        android:background="#9E9E9E" />
+        android:background="#9E9E9E"
+        android:layout_above="@id/bottomNav" />
 
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
         <LinearLayout
             android:id="@+id/navHome"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:text="Home"
-                android:textColor="@color/text_dark"
-                android:textSize="10sp" />
-
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navBuscar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/ic_doctor_search_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:text="Buscar"
-                android:textColor="@color/text_dark"
-                android:textSize="10sp" />
-
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navTurnos"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <View
+                android:id="@+id/iconTurnos"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/ic_calendar_clock"
                 android:backgroundTint="@color/teal_icon" />
 
             <TextView
+                android:id="@+id/textTurnos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:text="Turnos"
-                android:textColor="@color/teal_icon"
-                android:textSize="10sp" />
-
+                android:textSize="12sp"
+                android:textColor="@color/teal_icon" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navPerfil"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/ic_profie" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:text="Perfil"
-                android:textColor="@color/text_dark"
-                android:textSize="10sp" />
-
+                android:textSize="12sp"
+                android:textColor="@color/text_gray" />
         </LinearLayout>
 
     </LinearLayout>
