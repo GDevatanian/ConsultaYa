@@ -15,34 +15,32 @@ class ProfileActivity : AppCompatActivity() {
 
         // Flecha atrás
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            finish()
             overridePendingTransition(0, 0)
         }
 
         // Navegación
         findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            finish()
             overridePendingTransition(0, 0)
         }
 
         findViewById<LinearLayout>(R.id.navBuscar).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("PANTALLA_INICIAL", "BUSCAR")
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
             overridePendingTransition(0, 0)
+            finish()
         }
 
         findViewById<LinearLayout>(R.id.navTurnos).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("PANTALLA_INICIAL", "TURNOS")
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
             overridePendingTransition(0, 0)
+            finish()
         }
 
         // Logout

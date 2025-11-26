@@ -56,7 +56,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_arrow_forward"
+        android:src="@drawable/ic_chevron_right_green"
         android:layout_marginStart="12dp"
         android:contentDescription="Ver detalles del turno" />
 

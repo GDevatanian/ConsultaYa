@@ -14,6 +14,13 @@ import androidx.core.content.ContextCompat
 
 data class Turno(val nombre: String, val especialidad: String, val fechaHora: String, val motivo: String = "")
 
+// Enum para identificar las pantallas
+enum class Pantalla {
+    HOME, BUSCAR_MEDICO, TURNOS, HISTORIAL, CHATS, CHAT_INDIVIDUAL,
+    AGENDAR_TURNO, SALA_ESPERA, DETALLE_CONSULTA, EMERGENCIA_CONFIRMAR,
+    EMERGENCIA_CONECTANDO, VIDEOLLAMADA
+}
+
 class MainActivity : AppCompatActivity() {
     private var horarioSeleccionado: String? = null
     private val turnos = mutableListOf(
@@ -22,34 +29,95 @@ class MainActivity : AppCompatActivity() {
         Turno("Dr. Juan Perez", "Clinico", "20/02/26, 10:15hs", "Chequeo general anual")
     )
     private var turnoSeleccionadoParaCancelar: Int = -1
+    
+    // Stack de navegación
+    private val navigationStack = mutableListOf<Pantalla>()
+    private var pantallaActual: Pantalla = Pantalla.HOME
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        handleIntent(intent)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent) {
         val pantallaInicial = intent.getStringExtra("PANTALLA_INICIAL")
         when (pantallaInicial) {
-            "BUSCAR" -> mostrarBuscarMedico()
-            "TURNOS" -> mostrarTurnos()
+            "BUSCAR" -> navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
+            "TURNOS" -> navegarDesdeNavbar(Pantalla.TURNOS)
+            else -> navegarDesdeNavbar(Pantalla.HOME)
+        }
+    }
+    
+    // Navegar desde el navbar - limpia el stack y pone solo esta pantalla
+    private fun navegarDesdeNavbar(pantalla: Pantalla) {
+        navigationStack.clear()
+        pantallaActual = pantalla
+        mostrarPantalla(pantalla)
+    }
+    
+    // Navegar agregando al stack (para navegación interna)
+    private fun navegarA(pantalla: Pantalla) {
+        navigationStack.add(pantallaActual)
+        pantallaActual = pantalla
+        mostrarPantalla(pantalla)
+    }
+    
+    // Volver atrás en el stack
+    private fun volverAtras() {
+        if (navigationStack.isNotEmpty()) {
+            pantallaActual = navigationStack.removeAt(navigationStack.size - 1)
+            mostrarPantalla(pantallaActual)
+        } else {
+            // Si no hay nada en el stack y estamos en home, cerrar app
+            if (pantallaActual == Pantalla.HOME) {
+                finish()
+            } else {
+                // Si no estamos en home, ir a home
+                pantallaActual = Pantalla.HOME
+                mostrarPantalla(Pantalla.HOME)
+            }
+        }
+    }
+    
+    private fun mostrarPantalla(pantalla: Pantalla) {
+        when (pantalla) {
+            Pantalla.HOME -> mostrarHome()
+            Pantalla.BUSCAR_MEDICO -> mostrarBuscarMedico()
+            Pantalla.TURNOS -> mostrarTurnos()
+            Pantalla.HISTORIAL -> mostrarHistorial()
+            Pantalla.CHATS -> mostrarListaChats()
             else -> mostrarHome()
         }
+    }
+    
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        volverAtras()
     }
 
     private fun mostrarHome() {
         setContentView(R.layout.activity_main)
 
         findViewById<android.view.View>(R.id.btnBuscarMedico).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarA(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.btnMisTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarA(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.btnMisChats).setOnClickListener {
-            mostrarListaChats()
+            navegarA(Pantalla.CHATS)
         }
 
         findViewById<android.view.View>(R.id.btnHistorial).setOnClickListener {
-            mostrarHistorial()
+            navegarA(Pantalla.HISTORIAL)
         }
 
         findViewById<android.view.View>(R.id.btnConsultaGeneral).setOnClickListener {
@@ -64,16 +132,17 @@ class MainActivity : AppCompatActivity() {
             mostrarEmergenciaConfirmar()
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -161,7 +230,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnBack.setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
 
         btnMenu.setOnClickListener {
@@ -214,16 +283,17 @@ class MainActivity : AppCompatActivity() {
             mostrarAgendarTurno("Dr. Juan Perez", "Clinico", "◇ 4.9 (203)")
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -237,7 +307,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_turnos)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
 
         val listaTurnos = findViewById<LinearLayout>(R.id.listaTurnos)
@@ -257,16 +327,17 @@ class MainActivity : AppCompatActivity() {
             listaTurnos.addView(card)
         }
 
+        // Navbar - limpia el stack
         findViewById<View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
@@ -299,7 +370,7 @@ class MainActivity : AppCompatActivity() {
         horarioSeleccionado = null
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarBuscarMedico()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.nombreMedicoElegido).text = nombre
@@ -368,16 +439,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -409,7 +481,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.btnFiltro).setOnClickListener {
@@ -540,16 +612,17 @@ class MainActivity : AppCompatActivity() {
             mostrarDetalleConsulta("Dr. Roberto Sánchez", "Oftalmología", "15/08/2024, 11:00hs.", "Consulta oftalmológica. Agudeza visual estable. Se recomienda continuar con el uso de lentes correctivos.")
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -563,7 +636,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detalle_consulta)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarHistorial()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.nombreDoctor).text = nombre
@@ -572,16 +645,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textAnotaciones).text = anotaciones
         findViewById<ImageView>(R.id.imagenDoctorDetalle).setImageResource(obtenerFotoDoctor(nombre))
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -593,7 +667,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lista_chats)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
 
         findViewById<android.view.View>(R.id.chat1).setOnClickListener {
@@ -620,20 +694,23 @@ class MainActivity : AppCompatActivity() {
             mostrarChat("Dra. Laura Fernández")
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
         }
     }
 
@@ -641,7 +718,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarListaChats()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.nombreDoctorChat).text = nombreDoctor
@@ -654,16 +731,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -682,7 +760,7 @@ class MainActivity : AppCompatActivity() {
             turnos.removeAt(index)
             dialog.dismiss()
             Toast.makeText(this, "Turno cancelado", Toast.LENGTH_SHORT).show()
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
         
         builder.setNegativeButton("Volver") { dialog, _ ->
@@ -696,7 +774,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sala_espera)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarTurnos()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.nombreProfesional).text = turno.nombre
@@ -716,16 +794,17 @@ class MainActivity : AppCompatActivity() {
             mostrarDialogoCancelarEnSalaEspera(index, turno)
         }
 
+        // Navbar - limpia el stack
         findViewById<android.view.View>(R.id.navHome).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         findViewById<android.view.View>(R.id.navBuscar).setOnClickListener {
-            mostrarBuscarMedico()
+            navegarDesdeNavbar(Pantalla.BUSCAR_MEDICO)
         }
 
         findViewById<android.view.View>(R.id.navTurnos).setOnClickListener {
-            mostrarTurnos()
+            navegarDesdeNavbar(Pantalla.TURNOS)
         }
 
         findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
@@ -757,7 +836,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_emergencia_confirmar)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
 
         findViewById<TextView>(R.id.btnConectar).setOnClickListener {
@@ -765,7 +844,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.btnCancelar).setOnClickListener {
-            mostrarHome()
+            volverAtras()
         }
     }
 
@@ -773,7 +852,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_emergencia_conectando)
 
         findViewById<TextView>(R.id.btnCancelarConexion).setOnClickListener {
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         // Simular conexión después de 5 segundos
@@ -839,7 +918,7 @@ class MainActivity : AppCompatActivity() {
         // Botón 4: Finalizar llamada
         findViewById<android.widget.ImageButton>(R.id.btnEndCall).setOnClickListener {
             Toast.makeText(this, "Llamada finalizada", Toast.LENGTH_SHORT).show()
-            mostrarHome()
+            navegarDesdeNavbar(Pantalla.HOME)
         }
 
         // Botón 5: Dar vuelta cámara (dentro del recuadro del paciente)

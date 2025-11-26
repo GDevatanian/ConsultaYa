@@ -58,12 +58,10 @@
                 android:textSize="12sp"
                 android:textColor="@color/text_dark" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=">"
-                android:textSize="14sp"
-                android:textColor="@color/teal_icon" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right_green" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,12 +81,10 @@
                 android:textSize="12sp"
                 android:textColor="@color/text_dark" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=">"
-                android:textSize="14sp"
-                android:textColor="@color/teal_icon" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right_green" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,12 +104,10 @@
                 android:textSize="12sp"
                 android:textColor="@color/text_dark" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=">"
-                android:textSize="14sp"
-                android:textColor="@color/teal_icon" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right_green" />
         </LinearLayout>
 
         <LinearLayout
@@ -133,12 +127,10 @@
                 android:textSize="12sp"
                 android:textColor="@color/text_dark" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=">"
-                android:textSize="14sp"
-                android:textColor="@color/teal_icon" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_chevron_right_green" />
         </LinearLayout>
     </LinearLayout>
 
@@ -271,13 +263,13 @@
                             android:id="@+id/btnVerDetalle1"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -359,13 +351,13 @@
                             android:id="@+id/btnVerDetalle2"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -447,13 +439,13 @@
                             android:id="@+id/btnVerDetalle3"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -535,13 +527,13 @@
                             android:id="@+id/btnVerDetalle4"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -623,13 +615,13 @@
                             android:id="@+id/btnVerDetalle5"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -721,13 +713,13 @@
                             android:id="@+id/btnVerDetalle5_fechaDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -809,13 +801,13 @@
                             android:id="@+id/btnVerDetalle4_fechaDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -897,13 +889,13 @@
                             android:id="@+id/btnVerDetalle3_fechaDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -985,13 +977,13 @@
                             android:id="@+id/btnVerDetalle2_fechaDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1073,13 +1065,13 @@
                             android:id="@+id/btnVerDetalle1_fechaDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1169,13 +1161,13 @@
                             android:id="@+id/btnVerDetalle4_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1255,13 +1247,13 @@
                             android:id="@+id/btnVerDetalle3_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1341,13 +1333,13 @@
                             android:id="@+id/btnVerDetalle6_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1427,13 +1419,13 @@
                             android:id="@+id/btnVerDetalle2_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1513,13 +1505,13 @@
                             android:id="@+id/btnVerDetalle1_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1599,13 +1591,13 @@
                             android:id="@+id/btnVerDetalle5_nombreAsc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1695,13 +1687,13 @@
                             android:id="@+id/btnVerDetalle5_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1781,13 +1773,13 @@
                             android:id="@+id/btnVerDetalle1_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1867,13 +1859,13 @@
                             android:id="@+id/btnVerDetalle2_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -1953,13 +1945,13 @@
                             android:id="@+id/btnVerDetalle6_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -2039,13 +2031,13 @@
                             android:id="@+id/btnVerDetalle3_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
@@ -2125,13 +2117,13 @@
                             android:id="@+id/btnVerDetalle4_nombreDesc"
                             android:layout_width="60dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_chevron_right"
+                            android:src="@drawable/ic_chevron_right_green"
                             android:background="@android:color/transparent"
                             android:padding="8dp"
                             android:minHeight="50dp"
                             android:scaleType="centerInside"
                             android:layout_marginStart="12dp"
-                            app:tint="@color/text_gray"/>
+/>
                     </LinearLayout>
 
                     <View
